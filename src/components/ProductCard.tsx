@@ -1,8 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
 import { ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
-import { ShoppingCart } from "lucide-react";
 import { toast } from "sonner";
 
 interface ProductCardProps {
@@ -31,8 +30,8 @@ export const ProductCard = ({ product }: ProductCardProps) => {
     };
     
     addItem(cartItem);
-    toast.success("Added to cart!", {
-      description: `${node.title} has been added to your cart.`
+    toast.success("Added to cart", {
+      position: "top-center"
     });
   };
 
@@ -40,9 +39,9 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const image = node.images.edges[0]?.node;
 
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+    <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 border-2 hover:border-accent">
       <CardHeader className="p-0">
-        <div className="aspect-square overflow-hidden bg-muted">
+        <div className="aspect-square overflow-hidden bg-secondary/20 relative">
           {image ? (
             <img
               src={image.url}
@@ -56,19 +55,25 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           )}
         </div>
       </CardHeader>
-      <CardContent className="p-4">
-        <CardTitle className="text-lg mb-2">{node.title}</CardTitle>
-        <CardDescription className="line-clamp-2">
-          {node.description || "No description available"}
-        </CardDescription>
-        <p className="text-xl font-bold mt-4">
+      <CardContent className="p-6">
+        <h3 className="font-heading font-bold text-lg mb-2 line-clamp-2 tracking-wide">
+          {node.title.toUpperCase()}
+        </h3>
+        {node.description && (
+          <p className="text-sm text-muted-foreground line-clamp-2 mb-4">
+            {node.description}
+          </p>
+        )}
+        <p className="font-heading text-xl font-bold">
           {price.currencyCode} {parseFloat(price.amount).toFixed(2)}
         </p>
       </CardContent>
-      <CardFooter className="p-4 pt-0">
-        <Button onClick={handleAddToCart} className="w-full">
-          <ShoppingCart className="w-4 h-4 mr-2" />
-          Add to Cart
+      <CardFooter className="p-6 pt-0">
+        <Button 
+          onClick={handleAddToCart} 
+          className="w-full bg-accent hover:bg-accent/90 text-white font-heading font-bold"
+        >
+          ADD TO CART
         </Button>
       </CardFooter>
     </Card>
