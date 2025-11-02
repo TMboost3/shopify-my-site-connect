@@ -17,6 +17,7 @@ const Shop = () => {
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 1000]);
   const [maxPrice, setMaxPrice] = useState(1000);
   const [showInStockOnly, setShowInStockOnly] = useState(false);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState("featured");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
@@ -43,6 +44,17 @@ const Shop = () => {
     loadProducts();
   }, []);
 
+  // Extract unique categories
+  const availableCategories = useMemo(() => {
+    const categories = new Set<string>();
+    products.forEach(product => {
+      if (product.node.productType) {
+        categories.add(product.node.productType);
+      }
+    });
+    return Array.from(categories).sort();
+  }, [products]);
+
   // Filter and sort products
   const filteredAndSortedProducts = useMemo(() => {
     let filtered = [...products];
@@ -52,6 +64,13 @@ const Shop = () => {
       const price = parseFloat(product.node.priceRange.minVariantPrice.amount);
       return price >= priceRange[0] && price <= priceRange[1];
     });
+
+    // Category filter
+    if (selectedCategories.length > 0) {
+      filtered = filtered.filter(product =>
+        selectedCategories.includes(product.node.productType)
+      );
+    }
 
     // Stock filter
     if (showInStockOnly) {
@@ -86,20 +105,30 @@ const Shop = () => {
     }
 
     return filtered;
-  }, [products, priceRange, showInStockOnly, sortBy]);
+  }, [products, priceRange, selectedCategories, showInStockOnly, sortBy]);
 
   const activeFilterCount = useMemo(() => {
     let count = 0;
     if (priceRange[0] !== 0 || priceRange[1] !== maxPrice) count++;
+    if (selectedCategories.length > 0) count++;
     if (showInStockOnly) count++;
     if (sortBy !== "featured") count++;
     return count;
-  }, [priceRange, maxPrice, showInStockOnly, sortBy]);
+  }, [priceRange, maxPrice, selectedCategories, showInStockOnly, sortBy]);
 
   const clearFilters = () => {
     setPriceRange([0, maxPrice]);
+    setSelectedCategories([]);
     setShowInStockOnly(false);
     setSortBy("featured");
+  };
+
+  const toggleCategory = (category: string) => {
+    setSelectedCategories(prev =>
+      prev.includes(category)
+        ? prev.filter(c => c !== category)
+        : [...prev, category]
+    );
   };
 
   const FilterContent = () => (
@@ -142,6 +171,29 @@ const Shop = () => {
             </div>
           </AccordionContent>
         </AccordionItem>
+
+        {/* Category */}
+        {availableCategories.length > 0 && (
+          <AccordionItem value="category">
+            <AccordionTrigger className="text-sm font-heading font-bold tracking-wide">
+              CATEGORY
+            </AccordionTrigger>
+            <AccordionContent className="pt-4 space-y-3">
+              {availableCategories.map((category) => (
+                <div key={category} className="flex items-center space-x-2">
+                  <Checkbox
+                    id={`category-${category}`}
+                    checked={selectedCategories.includes(category)}
+                    onCheckedChange={() => toggleCategory(category)}
+                  />
+                  <label htmlFor={`category-${category}`} className="text-sm cursor-pointer">
+                    {category}
+                  </label>
+                </div>
+              ))}
+            </AccordionContent>
+          </AccordionItem>
+        )}
 
         {/* Availability */}
         <AccordionItem value="availability">
@@ -262,15 +314,24 @@ const Shop = () => {
                       />
                     </Badge>
                   )}
-                  {showInStockOnly && (
-                    <Badge variant="secondary" className="gap-1">
-                      In Stock
-                      <X
-                        className="h-3 w-3 cursor-pointer"
-                        onClick={() => setShowInStockOnly(false)}
-                      />
-                    </Badge>
-                  )}
+              {selectedCategories.map((category) => (
+                <Badge key={category} variant="secondary" className="gap-1">
+                  {category}
+                  <X 
+                    className="h-3 w-3 cursor-pointer" 
+                    onClick={() => toggleCategory(category)}
+                  />
+                </Badge>
+              ))}
+              {showInStockOnly && (
+                <Badge variant="secondary" className="gap-1">
+                  In Stock
+                  <X 
+                    className="h-3 w-3 cursor-pointer" 
+                    onClick={() => setShowInStockOnly(false)}
+                  />
+                </Badge>
+              )}
                   {sortBy !== "featured" && (
                     <Badge variant="secondary" className="gap-1">
                       {sortBy === "price-asc" && "Price: Low to High"}
