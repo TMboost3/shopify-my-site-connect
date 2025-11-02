@@ -3,6 +3,7 @@ import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { ShopifyProduct } from "@/lib/shopify";
 import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
+import { useNavigate } from "react-router-dom";
 
 interface ProductCardProps {
   product: ShopifyProduct;
@@ -10,6 +11,7 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product }: ProductCardProps) => {
   const addItem = useCartStore(state => state.addItem);
+  const navigate = useNavigate();
   const { node } = product;
   
   const handleAddToCart = () => {
@@ -41,7 +43,10 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 border-2 hover:border-accent">
       <CardHeader className="p-0">
-        <div className="aspect-square overflow-hidden bg-secondary/20 relative">
+        <div 
+          className="aspect-square overflow-hidden bg-secondary/20 relative cursor-pointer"
+          onClick={() => navigate(`/product/${node.handle}`)}
+        >
           {image ? (
             <img
               src={image.url}
@@ -56,7 +61,10 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         </div>
       </CardHeader>
       <CardContent className="p-6">
-        <h3 className="font-heading font-bold text-lg mb-2 line-clamp-2 tracking-wide">
+        <h3 
+          className="font-heading font-bold text-lg mb-2 line-clamp-2 tracking-wide cursor-pointer hover:text-accent transition-colors"
+          onClick={() => navigate(`/product/${node.handle}`)}
+        >
           {node.title.toUpperCase()}
         </h3>
         {node.description && (

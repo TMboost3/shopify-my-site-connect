@@ -140,6 +140,63 @@ export async function fetchProducts(count: number = 50): Promise<ShopifyProduct[
   return data?.data?.products?.edges || [];
 }
 
+// GraphQL query to fetch single product by handle
+const PRODUCT_BY_HANDLE_QUERY = `
+  query GetProductByHandle($handle: String!) {
+    product(handle: $handle) {
+      id
+      title
+      description
+      handle
+      priceRange {
+        minVariantPrice {
+          amount
+          currencyCode
+        }
+      }
+      images(first: 10) {
+        edges {
+          node {
+            url
+            altText
+          }
+        }
+      }
+      variants(first: 50) {
+        edges {
+          node {
+            id
+            title
+            price {
+              amount
+              currencyCode
+            }
+            availableForSale
+            selectedOptions {
+              name
+              value
+            }
+          }
+        }
+      }
+      options {
+        name
+        values
+      }
+    }
+  }
+`;
+
+export async function fetchProductByHandle(handle: string): Promise<ShopifyProduct | null> {
+  const data = await storefrontApiRequest(PRODUCT_BY_HANDLE_QUERY, { handle });
+  const product = data?.data?.product;
+  
+  if (!product) return null;
+  
+  // Wrap in the same structure as fetchProducts for consistency
+  return { node: product };
+}
+
 // GraphQL mutation to create cart
 const CART_CREATE_MUTATION = `
   mutation cartCreate($input: CartInput!) {
