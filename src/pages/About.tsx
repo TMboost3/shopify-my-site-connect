@@ -23,7 +23,7 @@ const About = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="space-y-8 text-lg leading-relaxed animate-fade-up">
             <h2 className="font-heading text-4xl md:text-5xl font-black tracking-tight mb-12">
-              WELCOME TO Z&apos;S C.R.O.W.N. LLC
+              WELCOME TO FIEND 4 DOPENESS
             </h2>
             
             <p>
@@ -34,7 +34,7 @@ const About = () => {
             </p>
 
             <p>
-              At Z&apos;s C.R.O.W.N. LLC, we understand that <span className="font-bold">fashion is a form of self-expression</span>. 
+              At Fiend 4 Dopeness, we understand that <span className="font-bold">fashion is a form of self-expression</span>. 
               That&apos;s why we meticulously handpick each item in our collection to ensure that it embodies the perfect 
               blend of fashion and comfort. Whether you&apos;re looking for the Fiend 4 Dopeness Triple Greatness Hoodie 
               or the Fiend 4 Dopeness University Joggers, our products are designed to make you feel confident and stylish.
@@ -48,7 +48,7 @@ const About = () => {
             </p>
 
             <p>
-              At Z&apos;s C.R.O.W.N. LLC, we are dedicated to providing our customers with an 
+              At Fiend 4 Dopeness, we are dedicated to providing our customers with an 
               <span className="font-bold"> exceptional shopping experience</span>. From the moment you browse our website 
               to the moment your order arrives at your doorstep, we strive for excellence in every aspect. Our customer 
               service team is always ready to assist you with any questions or concerns you may have, ensuring that your 
@@ -61,7 +61,7 @@ const About = () => {
 
             <p>
               Discover our exclusive designs and elevate your streetwear game to new heights. Stand out from the crowd 
-              and embrace your unique style with confidence. Welcome to Z&apos;s C.R.O.W.N. LLC, where 
+              and embrace your unique style with confidence. Welcome to Fiend 4 Dopeness, where 
               <span className="font-bold text-accent"> fashion reigns supreme</span>.
             </p>
           </div>
