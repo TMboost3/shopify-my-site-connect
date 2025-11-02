@@ -9,7 +9,8 @@ export const Header = () => {
   const location = useLocation();
 
   const navLinks = [
-    { name: "SHOP", path: "/" },
+    { name: "HOME", path: "/" },
+    { name: "SHOP", path: "/shop" },
     { name: "ABOUT", path: "/about" },
   ];
 

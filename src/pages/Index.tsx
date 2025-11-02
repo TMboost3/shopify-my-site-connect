@@ -55,8 +55,9 @@ const Index = () => {
             <Button 
               size="lg" 
               className="bg-accent hover:bg-accent/90 text-white font-heading font-bold text-base md:text-lg px-12 py-6 shadow-[0_0_30px_rgba(239,68,68,0.3)] hover:shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-300 hover:scale-105"
+              asChild
             >
-              SHOP THE LATEST DROP
+              <Link to="/shop">SHOP THE LATEST DROP</Link>
             </Button>
           </div>
         </div>
