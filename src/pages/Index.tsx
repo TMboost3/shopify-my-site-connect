@@ -30,15 +30,7 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-black text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/80 z-10" />
-        <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?w=1920&q=80"
-            alt="FIEND 4 DOPENESS Hero"
-            className="w-full h-full object-cover"
-          />
-        </div>
+      <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-black via-accent/20 to-black text-white overflow-hidden">
         <div className="relative z-20 text-center px-4">
           <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black tracking-wider mb-4">
             FIEND 4 DOPENESS
@@ -87,13 +79,15 @@ const Index = () => {
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 md:h-full min-h-[400px]">
-              <img 
-                src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800&q=80"
-                alt="Brand Manifesto"
-                className="w-full h-full object-cover"
-              />
-            </div>
+            {products.length > 0 && products[0].node.images.edges[0] && (
+              <div className="relative h-96 md:h-full min-h-[400px]">
+                <img 
+                  src={products[0].node.images.edges[0].node.url}
+                  alt={products[0].node.images.edges[0].node.altText || "FIEND 4 DOPENESS"}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
             <div className="space-y-6">
               <h2 className="font-heading text-3xl md:text-4xl font-black tracking-wider">
                 STATUS IS EVERYTHING
