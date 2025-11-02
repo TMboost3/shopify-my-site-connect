@@ -30,29 +30,57 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-black via-accent/20 to-black text-white overflow-hidden">
-        <div className="relative z-20 text-center px-4">
-          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black tracking-wider mb-4">
-            FIEND 4 DOPENESS
-          </h1>
-          <p className="text-lg md:text-2xl font-light tracking-wide mb-8">
-            AUTHENTICALLY UNIQUE STREETWEAR
-          </p>
-          <Button 
-            size="lg" 
-            className="bg-accent hover:bg-accent/90 text-white font-heading font-bold text-lg px-8 py-6"
-          >
-            SHOP THE LATEST DROP
-          </Button>
+      <section className="relative min-h-screen flex items-center justify-center bg-black text-white overflow-hidden">
+        {/* Animated gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-accent/10 to-black" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(239,68,68,0.1),transparent_50%)]" />
+        
+        {/* Grid overlay */}
+        <div className="absolute inset-0 opacity-[0.02]" 
+          style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+            backgroundSize: '50px 50px'
+          }}
+        />
+
+        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
+          <div className="animate-fade-in">
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6 bg-gradient-to-r from-white via-white to-accent bg-clip-text text-transparent">
+              FIEND 4<br />DOPENESS
+            </h1>
+            <div className="h-1 w-24 bg-accent mx-auto mb-8" />
+            <p className="text-xl md:text-3xl font-light tracking-[0.2em] mb-12 text-gray-300">
+              AUTHENTICALLY UNIQUE STREETWEAR
+            </p>
+            <Button 
+              size="lg" 
+              className="bg-accent hover:bg-accent/90 text-white font-heading font-bold text-base md:text-lg px-12 py-6 shadow-[0_0_30px_rgba(239,68,68,0.3)] hover:shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-300 hover:scale-105"
+            >
+              SHOP THE LATEST DROP
+            </Button>
+          </div>
+        </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
+            <div className="w-1 h-2 bg-white/50 rounded-full" />
+          </div>
         </div>
       </section>
 
       {/* Featured Products Section */}
-      <section className="py-20 px-4">
+      <section className="py-24 px-4 bg-gradient-to-b from-background to-muted/30">
         <div className="container mx-auto">
-          <h2 className="font-heading text-3xl md:text-5xl font-black tracking-wider text-center mb-12">
-            FEATURED FIENDS
-          </h2>
+          <div className="text-center mb-16 animate-fade-up">
+            <div className="inline-block">
+              <h2 className="font-heading text-4xl md:text-6xl font-black tracking-tight mb-4">
+                FEATURED FIENDS
+              </h2>
+              <div className="h-1 w-32 bg-accent mx-auto" />
+            </div>
+            <p className="mt-6 text-muted-foreground text-lg">Curated for the streets</p>
+          </div>
 
           {loading ? (
             <div className="flex justify-center items-center py-20">
@@ -76,44 +104,52 @@ const Index = () => {
       </section>
 
       {/* Brand Manifesto Section */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            {products.length > 0 && products[0].node.images.edges[0] && (
-              <div className="relative h-96 md:h-full min-h-[400px]">
-                <img 
-                  src={products[0].node.images.edges[0].node.url}
-                  alt={products[0].node.images.edges[0].node.altText || "FIEND 4 DOPENESS"}
-                  className="w-full h-full object-cover"
-                />
+      <section className="py-32 bg-black text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-accent/5 to-black" />
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="order-2 md:order-1 space-y-8 animate-fade-in">
+              <div>
+                <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight">
+                  STATUS IS<br />EVERYTHING
+                </h2>
+                <div className="h-1 w-24 bg-accent mb-8" />
               </div>
-            )}
-            <div className="space-y-6">
-              <h2 className="font-heading text-3xl md:text-4xl font-black tracking-wider">
-                STATUS IS EVERYTHING
-              </h2>
-              <div className="space-y-4 text-lg leading-relaxed">
-                <p>
-                  We are the <span className="font-bold">fiends for dopeness</span>.
+              
+              <div className="space-y-6 text-lg md:text-xl leading-relaxed">
+                <p className="text-gray-300">
+                  We are the <span className="text-accent font-bold">fiends for dopeness</span>.
                 </p>
-                <p>
-                  We create high-quality, <span className="font-bold">unapologetic</span> designer 
+                <p className="text-gray-300">
+                  We create high-quality, <span className="text-white font-bold">unapologetic</span> designer 
                   streetwear that resonates with youth street culture.
                 </p>
-                <p className="font-bold text-xl">
-                  This isn't just clothing. It's a statement.
+                <p className="text-2xl md:text-3xl font-bold text-white">
+                  This isn't just clothing.<br />It's a statement.
                 </p>
               </div>
+              
               <Link to="/about">
                 <Button 
-                  variant="outline" 
                   size="lg"
-                  className="border-2 border-foreground hover:bg-foreground hover:text-background font-heading font-bold"
+                  className="bg-white text-black hover:bg-white/90 font-heading font-bold text-base px-8 py-6 mt-4 hover:scale-105 transition-transform"
                 >
                   LEARN MORE
                 </Button>
               </Link>
             </div>
+
+            {products.length > 0 && products[0].node.images.edges[0] && (
+              <div className="order-1 md:order-2 relative h-[400px] md:h-[600px] group">
+                <div className="absolute inset-0 bg-accent/20 group-hover:bg-accent/30 transition-colors duration-300" />
+                <img 
+                  src={products[0].node.images.edges[0].node.url}
+                  alt={products[0].node.images.edges[0].node.altText || "FIEND 4 DOPENESS"}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                />
+                <div className="absolute inset-0 border-4 border-white/10 group-hover:border-accent/50 transition-colors duration-300" />
+              </div>
+            )}
           </div>
         </div>
       </section>

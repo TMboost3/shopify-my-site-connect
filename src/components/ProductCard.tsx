@@ -41,18 +41,21 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const image = node.images.edges[0]?.node;
 
   return (
-    <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 border-2 hover:border-accent">
+    <Card className="group overflow-hidden hover:shadow-2xl transition-all duration-300 border border-border hover:border-accent bg-card animate-fade-up">
       <CardHeader className="p-0">
         <div 
-          className="aspect-square overflow-hidden bg-secondary/20 relative cursor-pointer"
+          className="aspect-square overflow-hidden bg-muted/30 relative cursor-pointer"
           onClick={() => navigate(`/product/${node.handle}`)}
         >
           {image ? (
-            <img
-              src={image.url}
-              alt={image.altText || node.title}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-            />
+            <>
+              <img
+                src={image.url}
+                alt={image.altText || node.title}
+                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+            </>
           ) : (
             <div className="w-full h-full flex items-center justify-center text-muted-foreground">
               No image
@@ -62,7 +65,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       </CardHeader>
       <CardContent className="p-6">
         <h3 
-          className="font-heading font-bold text-lg mb-2 line-clamp-2 tracking-wide cursor-pointer hover:text-accent transition-colors"
+          className="font-heading font-bold text-lg mb-2 line-clamp-2 tracking-wide cursor-pointer group-hover:text-accent transition-colors"
           onClick={() => navigate(`/product/${node.handle}`)}
         >
           {node.title.toUpperCase()}
@@ -79,7 +82,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       <CardFooter className="p-6 pt-0">
         <Button 
           onClick={handleAddToCart} 
-          className="w-full bg-accent hover:bg-accent/90 text-white font-heading font-bold"
+          className="w-full bg-accent hover:bg-accent/90 text-white font-heading font-bold group-hover:shadow-lg group-hover:shadow-accent/30 transition-all duration-300"
         >
           ADD TO CART
         </Button>

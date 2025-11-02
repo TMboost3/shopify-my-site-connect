@@ -27,7 +27,7 @@ All colors MUST be HSL.
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 40%;
 
-    --accent: 0 100% 50%; /* Red #FF0000 */
+    --accent: 0 84% 60%; /* Vibrant Red */
     --accent-foreground: 0 0% 100%; /* White on red */
 
     --destructive: 0 100% 50%;
@@ -37,7 +37,12 @@ All colors MUST be HSL.
     --input: 0 0% 90%;
     --ring: 0 0% 0%;
 
-    --radius: 0rem; /* Sharp corners for streetwear aesthetic */
+    --radius: 0.25rem;
+
+    /* Custom design tokens */
+    --gradient-accent: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 100% 50%));
+    --shadow-dramatic: 0 20px 60px -15px rgba(0, 0, 0, 0.3);
+    --shadow-accent: 0 10px 40px -10px hsla(0, 84%, 60%, 0.4);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 0%;
@@ -69,7 +74,7 @@ All colors MUST be HSL.
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 0 100% 50%; /* Red stays the same */
+    --accent: 0 84% 60%; /* Vibrant Red */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 100% 50%;
@@ -78,6 +83,10 @@ All colors MUST be HSL.
     --border: 0 0% 20%;
     --input: 0 0% 20%;
     --ring: 0 0% 100%;
+
+    --gradient-accent: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 100% 50%));
+    --shadow-dramatic: 0 20px 60px -15px rgba(255, 255, 255, 0.1);
+    --shadow-accent: 0 10px 40px -10px hsla(0, 84%, 60%, 0.4);
     
     --sidebar-background: 0 0% 5%;
     --sidebar-foreground: 0 0% 100%;
