@@ -31,15 +31,15 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-black text-white overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center bg-background text-foreground overflow-hidden">
         {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black via-accent/10 to-black" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(239,68,68,0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background via-accent/5 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--accent)/0.08),transparent_50%)]" />
         
         {/* Grid overlay */}
-        <div className="absolute inset-0 opacity-[0.02]" 
+        <div className="absolute inset-0 opacity-[0.03]" 
           style={{
-            backgroundImage: 'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(rgba(0,0,0,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.5) 1px, transparent 1px)',
             backgroundSize: '50px 50px'
           }}
         />
@@ -52,12 +52,12 @@ const Index = () => {
               className="w-full max-w-2xl mx-auto mb-6 animate-fade-in"
             />
             <div className="h-1 w-24 bg-accent mx-auto mb-8" />
-            <p className="text-xl md:text-3xl font-light tracking-[0.2em] mb-12 text-gray-300">
+            <p className="text-xl md:text-3xl font-light tracking-[0.2em] mb-12 text-muted-foreground">
               AUTHENTICALLY UNIQUE STREETWEAR
             </p>
             <Button 
               size="lg" 
-              className="bg-accent hover:bg-accent/90 text-white font-heading font-bold text-base md:text-lg px-12 py-6 shadow-[0_0_30px_rgba(239,68,68,0.3)] hover:shadow-[0_0_50px_rgba(239,68,68,0.5)] transition-all duration-300 hover:scale-105"
+              className="bg-accent hover:bg-accent/90 text-accent-foreground font-heading font-bold text-base md:text-lg px-12 py-6 shadow-[0_0_30px_hsl(var(--accent)/0.3)] hover:shadow-[0_0_50px_hsl(var(--accent)/0.5)] transition-all duration-300 hover:scale-105"
               asChild
             >
               <Link to="/shop">SHOP THE LATEST DROP</Link>
@@ -67,8 +67,8 @@ const Index = () => {
 
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
-            <div className="w-1 h-2 bg-white/50 rounded-full" />
+          <div className="w-6 h-10 border-2 border-border rounded-full flex justify-center pt-2">
+            <div className="w-1 h-2 bg-muted-foreground rounded-full" />
           </div>
         </div>
       </section>
@@ -108,8 +108,8 @@ const Index = () => {
       </section>
 
       {/* Brand Manifesto Section */}
-      <section className="py-32 bg-black text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-accent/5 to-black" />
+      <section className="py-32 bg-muted text-foreground relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-muted via-accent/5 to-muted" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="order-2 md:order-1 space-y-8 animate-fade-in">
@@ -121,14 +121,14 @@ const Index = () => {
               </div>
               
               <div className="space-y-6 text-lg md:text-xl leading-relaxed">
-                <p className="text-gray-300">
+                <p className="text-muted-foreground">
                   We are the <span className="text-accent font-bold">fiends for dopeness</span>.
                 </p>
-                <p className="text-gray-300">
-                  We create high-quality, <span className="text-white font-bold">unapologetic</span> designer 
+                <p className="text-muted-foreground">
+                  We create high-quality, <span className="text-foreground font-bold">unapologetic</span> designer 
                   streetwear that resonates with youth street culture.
                 </p>
-                <p className="text-2xl md:text-3xl font-bold text-white">
+                <p className="text-2xl md:text-3xl font-bold text-foreground">
                   This isn't just clothing.<br />It's a statement.
                 </p>
               </div>
@@ -136,7 +136,7 @@ const Index = () => {
               <Link to="/about">
                 <Button 
                   size="lg"
-                  className="bg-white text-black hover:bg-white/90 font-heading font-bold text-base px-8 py-6 mt-4 hover:scale-105 transition-transform"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90 font-heading font-bold text-base px-8 py-6 mt-4 hover:scale-105 transition-transform"
                 >
                   LEARN MORE
                 </Button>
@@ -145,13 +145,13 @@ const Index = () => {
 
             {products.length > 0 && products[0].node.images.edges[0] && (
               <div className="order-1 md:order-2 relative h-[400px] md:h-[600px] group">
-                <div className="absolute inset-0 bg-accent/20 group-hover:bg-accent/30 transition-colors duration-300" />
+                <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors duration-300" />
                 <img 
                   src={products[0].node.images.edges[0].node.url}
                   alt={products[0].node.images.edges[0].node.altText || "FIEND 4 DOPENESS"}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-full object-cover transition-all duration-500"
                 />
-                <div className="absolute inset-0 border-4 border-white/10 group-hover:border-accent/50 transition-colors duration-300" />
+                <div className="absolute inset-0 border-4 border-border group-hover:border-accent/50 transition-colors duration-300" />
               </div>
             )}
           </div>
@@ -159,12 +159,12 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-black text-white py-12">
+      <footer className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="font-heading text-xl font-bold mb-4">FIEND 4 DOPENESS</h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-muted-foreground">
                 Authentically unique streetwear for the culture.
               </p>
             </div>
@@ -184,7 +184,7 @@ const Index = () => {
               </ul>
             </div>
           </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-sm text-gray-400">
+          <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
             <p>&copy; 2025 FIEND 4 DOPENESS. All rights reserved.</p>
           </div>
         </div>

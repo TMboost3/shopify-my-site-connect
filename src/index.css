@@ -27,8 +27,8 @@ All colors MUST be HSL.
     --muted: 0 0% 96%;
     --muted-foreground: 0 0% 40%;
 
-    --accent: 0 84% 60%; /* Vibrant Red */
-    --accent-foreground: 0 0% 100%; /* White on red */
+    --accent: 330 81% 60%; /* Vibrant Pink */
+    --accent-foreground: 0 0% 100%; /* White on pink */
 
     --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -40,9 +40,9 @@ All colors MUST be HSL.
     --radius: 0.25rem;
 
     /* Custom design tokens */
-    --gradient-accent: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 100% 50%));
-    --shadow-dramatic: 0 20px 60px -15px rgba(0, 0, 0, 0.3);
-    --shadow-accent: 0 10px 40px -10px hsla(0, 84%, 60%, 0.4);
+    --gradient-accent: linear-gradient(135deg, hsl(330 81% 60%), hsl(330 81% 50%));
+    --shadow-dramatic: 0 20px 60px -15px rgba(0, 0, 0, 0.1);
+    --shadow-accent: 0 10px 40px -10px hsla(330, 81%, 60%, 0.3);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 0%;
@@ -74,7 +74,7 @@ All colors MUST be HSL.
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 0 84% 60%; /* Vibrant Red */
+    --accent: 330 81% 60%; /* Vibrant Pink */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 100% 50%;
@@ -84,9 +84,9 @@ All colors MUST be HSL.
     --input: 0 0% 20%;
     --ring: 0 0% 100%;
 
-    --gradient-accent: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 100% 50%));
+    --gradient-accent: linear-gradient(135deg, hsl(330 81% 60%), hsl(330 81% 50%));
     --shadow-dramatic: 0 20px 60px -15px rgba(255, 255, 255, 0.1);
-    --shadow-accent: 0 10px 40px -10px hsla(0, 84%, 60%, 0.4);
+    --shadow-accent: 0 10px 40px -10px hsla(330, 81%, 60%, 0.3);
     
     --sidebar-background: 0 0% 5%;
     --sidebar-foreground: 0 0% 100%;
