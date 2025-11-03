@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import heroLogo from "@/assets/hero-logo.png";
 
 const Index = () => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
@@ -45,9 +46,11 @@ const Index = () => {
 
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
           <div className="animate-fade-in">
-            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-6 bg-gradient-to-r from-white via-white to-accent bg-clip-text text-transparent">
-              FIEND 4<br />DOPENESS
-            </h1>
+            <img 
+              src={heroLogo} 
+              alt="FIEND 4 DOPENESS" 
+              className="w-full max-w-2xl mx-auto mb-6 animate-fade-in"
+            />
             <div className="h-1 w-24 bg-accent mx-auto mb-8" />
             <p className="text-xl md:text-3xl font-light tracking-[0.2em] mb-12 text-gray-300">
               AUTHENTICALLY UNIQUE STREETWEAR
