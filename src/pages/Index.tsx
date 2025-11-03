@@ -31,7 +31,7 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-background text-foreground overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 bg-background text-foreground overflow-hidden">
         {/* Animated gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-background via-accent/5 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--accent)/0.08),transparent_50%)]" />
@@ -44,12 +44,12 @@ const Index = () => {
           }}
         />
 
-        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto">
+        <div className="relative z-20 text-center px-4 max-w-5xl mx-auto -mt-20">
           <div className="animate-fade-in">
             <img 
               src={heroLogo} 
               alt="FIEND 4 DOPENESS" 
-              className="w-full max-w-2xl mx-auto mb-6 animate-fade-in"
+              className="w-full max-w-2xl mx-auto mb-6 animate-scale-in"
             />
             <div className="h-1 w-24 bg-accent mx-auto mb-8" />
             <p className="text-xl md:text-3xl font-light tracking-[0.2em] mb-12 text-muted-foreground">
