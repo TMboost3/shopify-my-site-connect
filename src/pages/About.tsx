@@ -1,6 +1,7 @@
 import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import aboutHero from "@/assets/about-hero.png";
 
 const About = () => {
   return (
@@ -8,14 +9,12 @@ const About = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-gradient-to-br from-black via-accent/10 to-black text-white">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(239,68,68,0.1),transparent_50%)]" />
-        <div className="relative z-20 text-center px-4">
-          <h1 className="font-heading text-5xl md:text-7xl font-black tracking-tight animate-fade-in">
-            ABOUT US
-          </h1>
-          <div className="h-1 w-24 bg-accent mx-auto mt-6" />
-        </div>
+      <section className="relative h-[60vh] flex items-center justify-center bg-background overflow-hidden">
+        <img 
+          src={aboutHero} 
+          alt="About Us" 
+          className="absolute inset-0 w-full h-full object-cover animate-fade-in"
+        />
       </section>
 
       {/* Brand Story */}
