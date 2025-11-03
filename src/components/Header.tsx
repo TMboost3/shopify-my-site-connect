@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CartDrawer } from "@/components/CartDrawer";
+import logo from "@/assets/logo.png";
 
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -21,8 +22,8 @@ export const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="font-heading text-xl md:text-2xl font-bold tracking-wider">
-            FIEND 4 DOPENESS
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="FIEND 4 DOPENESS" className="h-10 md:h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
