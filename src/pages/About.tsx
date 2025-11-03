@@ -9,11 +9,11 @@ const About = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center justify-center bg-background overflow-hidden py-8">
+      <section className="relative h-[60vh] flex items-center justify-center bg-background overflow-hidden">
         <img 
           src={aboutHero} 
           alt="About Us" 
-          className="w-full h-full object-contain animate-fade-in"
+          className="absolute inset-0 w-full h-full object-cover animate-fade-in"
         />
       </section>
 
