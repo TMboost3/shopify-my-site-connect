@@ -89,8 +89,8 @@ const Index = () => {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-border rounded-full flex justify-center pt-2">
+        <div className="absolute bottom-12 md:bottom-16 left-1/2 -translate-x-1/2 animate-bounce">
+          <div className="w-5 h-8 md:w-6 md:h-10 border-2 border-border rounded-full flex justify-center pt-1.5 md:pt-2">
             <div className="w-1 h-2 bg-muted-foreground rounded-full" />
           </div>
         </div>
