@@ -22,15 +22,19 @@ const About = () => {
         <div className="container mx-auto max-w-4xl">
           <div className="space-y-8 text-lg leading-relaxed animate-fade-up">
             <h1 className="font-heading text-4xl md:text-5xl font-black tracking-tight mb-12">
-              ABOUT & MUSIC
+              ABOUT FIEND 4 DOPENESS
             </h1>
             
             <p>
-              Zemmearija Caldwell is a Los Angeles–based artist, designer, and musician who built this brand as a way to wear her world out loud. Every piece is a mix of street, emotion, and attitude — made for people who feel a little different and don't mind being seen.
+              Fiend 4 Dopeness is a streetwear brand created by Los Angeles–based artist, designer, and musician Zemmearija Caldwell. She built this brand as a way to wear her world out loud. Every piece is a mix of street, emotion, and attitude — made for people who feel a little different and don't mind being seen.
             </p>
 
             <p>
-              What started as sketches and characters turned into full looks, capsule drops, and a signature mascot that shows up across the line. The clothes aren't just "merch" — they're moving pieces of her stories, moods, and music.
+              What started as sketches and characters turned into full looks, capsule drops, and a signature mascot that shows up across the line. The clothes aren't just "merch" — they're moving pieces of her stories, moods, and music. From everyday staples to limited capsules, the focus is on strong silhouettes, original artwork, and details that make you look twice.
+            </p>
+
+            <p>
+              Fiend 4 Dopeness treats fashion as self-expression first: fits are built to be lived in, but bold enough to stand out. Limited runs, special drops, and select custom work keep things exclusive, so when you find a piece you love, you know you won't see it everywhere.
             </p>
 
             <div className="bg-muted p-8 border-l-4 border-accent">
@@ -69,7 +73,7 @@ const About = () => {
             </h2>
             
             <p>
-              Alongside designing, Zemmearija is also a recording artist. The same energy that shows up in the graphics and character designs lives in her music — personal, expressive, and straight from her point of view.
+              Alongside designing, Zemmearija is also a recording artist. The same energy that shows up in the graphics and character designs lives in her music — personal, expressive, and straight from her point of view. The brand lets you tap into both sides at once: the sound and the style.
             </p>
 
             <p className="text-xl font-bold">
