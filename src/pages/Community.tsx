@@ -9,6 +9,16 @@ import community7 from "@/assets/community-7.png";
 import community8 from "@/assets/community-8.png";
 import community9 from "@/assets/community-9.png";
 import community10 from "@/assets/community-10.png";
+import community11 from "@/assets/community-11.png";
+import community12 from "@/assets/community-12.png";
+import community13 from "@/assets/community-13.png";
+import community14 from "@/assets/community-14.png";
+import community15 from "@/assets/community-15.png";
+import community16 from "@/assets/community-16.png";
+import community17 from "@/assets/community-17.png";
+import community18 from "@/assets/community-18.png";
+import community19 from "@/assets/community-19.png";
+import community20 from "@/assets/community-20.png";
 
 const Community = () => {
   const communityImages = [
@@ -22,6 +32,16 @@ const Community = () => {
     { src: community8, alt: "Community member 8" },
     { src: community9, alt: "Community member 9" },
     { src: community10, alt: "Community member 10" },
+    { src: community11, alt: "Community member 11" },
+    { src: community12, alt: "Community member 12" },
+    { src: community13, alt: "Community member 13" },
+    { src: community14, alt: "Community member 14" },
+    { src: community15, alt: "Community member 15" },
+    { src: community16, alt: "Community member 16" },
+    { src: community17, alt: "Community member 17" },
+    { src: community18, alt: "Community member 18" },
+    { src: community19, alt: "Community member 19" },
+    { src: community20, alt: "Community member 20" },
   ];
 
   return (
