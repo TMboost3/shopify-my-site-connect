@@ -1,0 +1,85 @@
+import { Header } from "@/components/Header";
+import community1 from "@/assets/community-1.png";
+import community2 from "@/assets/community-2.png";
+import community3 from "@/assets/community-3.png";
+import community4 from "@/assets/community-4.png";
+import community5 from "@/assets/community-5.png";
+import community6 from "@/assets/community-6.png";
+import community7 from "@/assets/community-7.png";
+import community8 from "@/assets/community-8.png";
+import community9 from "@/assets/community-9.png";
+import community10 from "@/assets/community-10.png";
+
+const Community = () => {
+  const communityImages = [
+    { src: community1, alt: "Community member 1" },
+    { src: community2, alt: "Community member 2" },
+    { src: community3, alt: "Community member 3" },
+    { src: community4, alt: "Community member 4" },
+    { src: community5, alt: "Community member 5" },
+    { src: community6, alt: "Community member 6" },
+    { src: community7, alt: "Community member 7" },
+    { src: community8, alt: "Community member 8" },
+    { src: community9, alt: "Community member 9" },
+    { src: community10, alt: "Community member 10" },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      <main className="container mx-auto px-4 py-12 md:py-20">
+        {/* Hero Section */}
+        <section className="text-center mb-12 md:mb-16 animate-fade-in">
+          <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6 text-foreground">
+            JOIN THE FIEND COMMUNITY
+          </h1>
+          <div className="max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-muted-foreground mb-4">
+              For a chance to be featured, post with
+            </p>
+            <p className="font-heading text-2xl md:text-3xl font-bold text-accent">
+              #fiend4dopeness
+            </p>
+          </div>
+        </section>
+
+        {/* Gallery Grid */}
+        <section className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+            {communityImages.map((image, index) => (
+              <div
+                key={index}
+                className="aspect-square overflow-hidden rounded-lg bg-muted group cursor-pointer"
+              >
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Call to Action */}
+        <section className="text-center mt-16 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <p className="text-muted-foreground mb-4">
+            Share your FIEND style and become part of our community
+          </p>
+          <a
+            href="https://www.instagram.com/explore/tags/fiend4dopeness/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block font-heading font-bold text-accent hover:text-accent/80 transition-colors"
+          >
+            View #fiend4dopeness on Instagram →
+          </a>
+        </section>
+      </main>
+    </div>
+  );
+};
+
+export default Community;
