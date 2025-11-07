@@ -133,12 +133,12 @@ const Shop = () => {
   };
 
   const FilterContent = () => (
-    <div className="space-y-6">
+    <div className="space-y-6 animate-fade-in">
       {/* Sort */}
-      <div className="space-y-3">
+      <div className="space-y-3 hover-scale">
         <label className="text-sm font-heading font-bold tracking-wide">SORT BY</label>
         <Select value={sortBy} onValueChange={setSortBy}>
-          <SelectTrigger>
+          <SelectTrigger className="transition-all duration-300 hover:border-accent">
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
@@ -221,7 +221,7 @@ const Shop = () => {
         <Button
           variant="outline"
           onClick={clearFilters}
-          className="w-full"
+          className="w-full animate-scale-in hover-scale transition-all duration-300 hover:border-accent"
         >
           Clear All Filters
         </Button>
@@ -259,12 +259,12 @@ const Shop = () => {
         ) : (
           <div className="flex gap-8">
             {/* Desktop Sidebar Filters */}
-            <aside className="hidden lg:block w-64 flex-shrink-0">
+            <aside className="hidden lg:block w-64 flex-shrink-0 animate-fade-in">
               <div className="sticky top-24 space-y-6">
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between animate-slide-in-right">
                   <h2 className="font-heading text-xl font-black tracking-tight">FILTERS</h2>
                   {activeFilterCount > 0 && (
-                    <Badge variant="secondary">{activeFilterCount}</Badge>
+                    <Badge variant="secondary" className="animate-scale-in">{activeFilterCount}</Badge>
                   )}
                 </div>
                 <FilterContent />
@@ -274,19 +274,19 @@ const Shop = () => {
             {/* Main Content */}
             <div className="flex-1">
               {/* Mobile Filter Button & Product Count */}
-              <div className="flex items-center justify-between mb-8">
-                <p className="text-sm text-muted-foreground font-heading tracking-wide">
+              <div className="flex items-center justify-between mb-8 animate-fade-in">
+                <p className="text-sm text-muted-foreground font-heading tracking-wide transition-all duration-300">
                   {filteredAndSortedProducts.length} {filteredAndSortedProducts.length === 1 ? 'PRODUCT' : 'PRODUCTS'}
                 </p>
                 
                 {/* Mobile Filter Button */}
                 <Sheet open={mobileFiltersOpen} onOpenChange={setMobileFiltersOpen}>
                   <SheetTrigger asChild>
-                    <Button variant="outline" className="lg:hidden relative">
+                    <Button variant="outline" className="lg:hidden relative hover-scale transition-all duration-300 hover:border-accent">
                       <SlidersHorizontal className="h-4 w-4 mr-2" />
                       Filters
                       {activeFilterCount > 0 && (
-                        <Badge variant="secondary" className="ml-2">{activeFilterCount}</Badge>
+                        <Badge variant="secondary" className="ml-2 animate-scale-in">{activeFilterCount}</Badge>
                       )}
                     </Button>
                   </SheetTrigger>
@@ -305,42 +305,47 @@ const Shop = () => {
 
               {/* Active Filter Tags */}
               {activeFilterCount > 0 && (
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-6 animate-fade-in">
                   {(priceRange[0] !== 0 || priceRange[1] !== maxPrice) && (
-                    <Badge variant="secondary" className="gap-1">
+                    <Badge variant="secondary" className="gap-1 animate-scale-in hover-scale transition-all duration-200 hover:bg-accent hover:text-accent-foreground">
                       ${priceRange[0]} - ${priceRange[1]}
                       <X
-                        className="h-3 w-3 cursor-pointer"
+                        className="h-3 w-3 cursor-pointer transition-transform duration-200 hover:scale-125"
                         onClick={() => setPriceRange([0, maxPrice])}
                       />
                     </Badge>
                   )}
-              {selectedCategories.map((category) => (
-                <Badge key={category} variant="secondary" className="gap-1">
+              {selectedCategories.map((category, index) => (
+                <Badge 
+                  key={category} 
+                  variant="secondary" 
+                  className="gap-1 animate-scale-in hover-scale transition-all duration-200 hover:bg-accent hover:text-accent-foreground"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
                   {category}
                   <X 
-                    className="h-3 w-3 cursor-pointer" 
+                    className="h-3 w-3 cursor-pointer transition-transform duration-200 hover:scale-125" 
                     onClick={() => toggleCategory(category)}
                   />
                 </Badge>
               ))}
               {showInStockOnly && (
-                <Badge variant="secondary" className="gap-1">
+                <Badge variant="secondary" className="gap-1 animate-scale-in hover-scale transition-all duration-200 hover:bg-accent hover:text-accent-foreground">
                   In Stock
                   <X 
-                    className="h-3 w-3 cursor-pointer" 
+                    className="h-3 w-3 cursor-pointer transition-transform duration-200 hover:scale-125" 
                     onClick={() => setShowInStockOnly(false)}
                   />
                 </Badge>
               )}
                   {sortBy !== "featured" && (
-                    <Badge variant="secondary" className="gap-1">
+                    <Badge variant="secondary" className="gap-1 animate-scale-in hover-scale transition-all duration-200 hover:bg-accent hover:text-accent-foreground">
                       {sortBy === "price-asc" && "Price: Low to High"}
                       {sortBy === "price-desc" && "Price: High to Low"}
                       {sortBy === "name-asc" && "Name: A-Z"}
                       {sortBy === "name-desc" && "Name: Z-A"}
                       <X
-                        className="h-3 w-3 cursor-pointer"
+                        className="h-3 w-3 cursor-pointer transition-transform duration-200 hover:scale-125"
                         onClick={() => setSortBy("featured")}
                       />
                     </Badge>
@@ -350,16 +355,22 @@ const Shop = () => {
 
               {/* Products Grid */}
               {filteredAndSortedProducts.length === 0 ? (
-                <div className="text-center py-20">
+                <div className="text-center py-20 animate-fade-in">
                   <p className="text-muted-foreground text-lg mb-4">No products match your filters</p>
-                  <Button variant="outline" onClick={clearFilters}>
+                  <Button variant="outline" onClick={clearFilters} className="hover-scale">
                     Clear Filters
                   </Button>
                 </div>
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-                  {filteredAndSortedProducts.map((product) => (
-                    <ProductCard key={product.node.id} product={product} />
+                  {filteredAndSortedProducts.map((product, index) => (
+                    <div 
+                      key={product.node.id}
+                      className="animate-fade-in hover-scale"
+                      style={{ animationDelay: `${index * 100}ms` }}
+                    >
+                      <ProductCard product={product} />
+                    </div>
                   ))}
                 </div>
               )}
