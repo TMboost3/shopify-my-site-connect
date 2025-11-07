@@ -13,7 +13,7 @@ export const Header = () => {
     { name: "HOME", path: "/" },
     { name: "SHOP", path: "/shop" },
     { name: "COMMUNITY", path: "/community" },
-    { name: "ABOUT", path: "/about" },
+    { name: "ABOUT & MUSIC", path: "/about" },
   ];
 
   const isActive = (path: string) => location.pathname === path;

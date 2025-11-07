@@ -21,48 +21,31 @@ const About = () => {
       <section className="py-24 px-4">
         <div className="container mx-auto max-w-4xl">
           <div className="space-y-8 text-lg leading-relaxed animate-fade-up">
-            <h2 className="font-heading text-4xl md:text-5xl font-black tracking-tight mb-12">
-              WELCOME TO FIEND 4 DOPENESS
-            </h2>
+            <h1 className="font-heading text-4xl md:text-5xl font-black tracking-tight mb-12">
+              ABOUT & MUSIC
+            </h1>
             
             <p>
-              Your ultimate destination for <span className="text-accent font-bold">unique and stylish streetwear</span>. 
-              As industry experts in the world of fashion, we take pride in offering a curated selection of clothing 
-              that combines fashion-forward designs with unparalleled comfort. Our mission is to provide customers 
-              with exclusive designs and impeccable detailing that will make them stand out from the crowd.
+              Zemmearija Caldwell is a Los Angeles–based artist, designer, and musician who built this brand as a way to wear her world out loud. Every piece is a mix of street, emotion, and attitude — made for people who feel a little different and don't mind being seen.
             </p>
 
             <p>
-              At Fiend 4 Dopeness, we understand that <span className="font-bold">fashion is a form of self-expression</span>. 
-              That&apos;s why we meticulously handpick each item in our collection to ensure that it embodies the perfect 
-              blend of fashion and comfort. Whether you&apos;re looking for the Fiend 4 Dopeness Triple Greatness Hoodie 
-              or the Fiend 4 Dopeness University Joggers, our products are designed to make you feel confident and stylish.
+              What started as sketches and characters turned into full looks, capsule drops, and a signature mascot that shows up across the line. The clothes aren't just "merch" — they're moving pieces of her stories, moods, and music.
             </p>
 
-            <p className="bg-muted p-8 border-l-4 border-accent">
-              <span className="font-bold text-xl">What sets us apart</span> from other streetwear brands is our commitment 
-              to uniqueness. We believe that fashion should be an extension of your personality, and that&apos;s why we offer 
-              exclusive designs that you won&apos;t find anywhere else. Our team of industry experts stays ahead of the 
-              latest trends to bring you cutting-edge styles that will make a statement.
-            </p>
-
-            <p>
-              At Fiend 4 Dopeness, we are dedicated to providing our customers with an 
-              <span className="font-bold"> exceptional shopping experience</span>. From the moment you browse our website 
-              to the moment your order arrives at your doorstep, we strive for excellence in every aspect. Our customer 
-              service team is always ready to assist you with any questions or concerns you may have, ensuring that your 
-              satisfaction is our top priority.
-            </p>
-
-            <p className="text-xl md:text-2xl font-bold text-center py-8">
-              Join us on this fashion journey and experience the perfect blend of style and comfort.
-            </p>
-
-            <p>
-              Discover our exclusive designs and elevate your streetwear game to new heights. Stand out from the crowd 
-              and embrace your unique style with confidence. Welcome to Fiend 4 Dopeness, where 
-              <span className="font-bold text-accent"> fashion reigns supreme</span>.
-            </p>
+            <div className="bg-muted p-8 border-l-4 border-accent">
+              <p className="text-base">
+                Learn more about her journey in her feature on VoyageLA.
+              </p>
+              <a 
+                href="https://voyagela.com/interview/life-work-zemmearija-caldwell-los-angeles/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block mt-4 text-accent hover:text-accent/80 font-bold transition-colors"
+              >
+                Read the VoyageLA feature →
+              </a>
+            </div>
           </div>
 
           <div className="mt-16 text-center">
@@ -77,8 +60,49 @@ const About = () => {
         </div>
       </section>
 
+      {/* Music Section */}
+      <section className="py-24 px-4 bg-gradient-to-b from-background to-muted/50">
+        <div className="container mx-auto max-w-4xl">
+          <div className="space-y-8 text-lg leading-relaxed">
+            <h2 className="font-heading text-3xl md:text-4xl font-black tracking-tight mb-8">
+              MUSIC BEHIND THE BRAND
+            </h2>
+            
+            <p>
+              Alongside designing, Zemmearija is also a recording artist. The same energy that shows up in the graphics and character designs lives in her music — personal, expressive, and straight from her point of view.
+            </p>
+
+            <p className="text-xl font-bold">
+              Tap in below to listen and support.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button 
+                size="lg"
+                className="bg-accent hover:bg-accent/90 text-white font-heading font-bold px-8 py-6 hover:scale-105 transition-all duration-300"
+                asChild
+              >
+                <a href="https://linktr.ee/zmearya" target="_blank" rel="noopener noreferrer">
+                  Listen & Stream Music
+                </a>
+              </Button>
+              <Button 
+                size="lg"
+                variant="outline"
+                className="font-heading font-bold px-8 py-6 hover:scale-105 transition-all duration-300"
+                asChild
+              >
+                <a href="https://linktr.ee/zmearya" target="_blank" rel="noopener noreferrer">
+                  Buy Digital Music
+                </a>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Values Section */}
-      <section className="py-24 bg-gradient-to-b from-muted/50 to-background">
+      <section className="py-24 bg-gradient-to-b from-muted/30 to-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="font-heading text-4xl md:text-5xl font-black tracking-tight mb-4">
@@ -115,15 +139,37 @@ const About = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="font-heading text-xl font-bold mb-4">FIEND 4 DOPENESS</h3>
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-gray-400 mb-3">
                 Authentically unique streetwear for the culture.
+              </p>
+              <p className="text-xs text-gray-500">
+                Artist and brand based in Los Angeles. Featured in{" "}
+                <a 
+                  href="https://voyagela.com/interview/life-work-zemmearija-caldwell-los-angeles/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors underline"
+                >
+                  VoyageLA
+                </a>
+                {" · "}
+                Listen to the music{" "}
+                <a 
+                  href="https://linktr.ee/zmearya" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors underline"
+                >
+                  here
+                </a>
+                .
               </p>
             </div>
             <div>
               <h4 className="font-heading font-bold mb-4">QUICK LINKS</h4>
               <ul className="space-y-2 text-sm">
                 <li><Link to="/shop" className="hover:text-accent transition-colors">Shop</Link></li>
-                <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
+                <li><Link to="/about" className="hover:text-accent transition-colors">About & Music</Link></li>
               </ul>
             </div>
             <div>

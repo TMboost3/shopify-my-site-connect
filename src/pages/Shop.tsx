@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
@@ -366,6 +367,60 @@ const Shop = () => {
           </div>
         )}
       </div>
+
+      {/* Footer */}
+      <footer className="bg-primary text-primary-foreground py-12 mt-24">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <h3 className="font-heading text-xl font-bold mb-4">FIEND 4 DOPENESS</h3>
+              <p className="text-sm text-muted-foreground mb-3">
+                Authentically unique streetwear for the culture.
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Artist and brand based in Los Angeles. Featured in{" "}
+                <a 
+                  href="https://voyagela.com/interview/life-work-zemmearija-caldwell-los-angeles/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors underline"
+                >
+                  VoyageLA
+                </a>
+                {" · "}
+                Listen to the music{" "}
+                <a 
+                  href="https://linktr.ee/zmearya" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors underline"
+                >
+                  here
+                </a>
+                .
+              </p>
+            </div>
+            <div>
+              <h4 className="font-heading font-bold mb-4">QUICK LINKS</h4>
+              <ul className="space-y-2 text-sm">
+                <li><Link to="/shop" className="hover:text-accent transition-colors">Shop</Link></li>
+                <li><Link to="/about" className="hover:text-accent transition-colors">About & Music</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-heading font-bold mb-4">SUPPORT</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#" className="hover:text-accent transition-colors">Shipping</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Returns</a></li>
+                <li><a href="#" className="hover:text-accent transition-colors">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
+            <p>&copy; 2025 FIEND 4 DOPENESS. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };

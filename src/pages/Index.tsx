@@ -52,16 +52,39 @@ const Index = () => {
               className="w-full max-w-2xl mx-auto mb-6 animate-scale-in"
             />
             <div className="h-1 w-24 bg-accent mx-auto mb-8" />
-            <p className="text-xl md:text-3xl font-light tracking-[0.2em] mb-12 text-muted-foreground">
-              AUTHENTICALLY UNIQUE STREETWEAR
+            <h1 className="text-3xl md:text-5xl font-heading font-black tracking-tight mb-4">
+              WEAR YOUR WORLD OUT LOUD
+            </h1>
+            <p className="text-lg md:text-xl font-light leading-relaxed mb-12 text-muted-foreground max-w-3xl mx-auto">
+              Streetwear and music by Los Angeles artist Zemmearija Caldwell — built around one iconic character and a lot of emotion.
             </p>
-            <Button 
-              size="lg" 
-              className="bg-accent hover:bg-accent/90 text-accent-foreground font-heading font-bold text-base md:text-lg px-12 py-6 shadow-[0_0_30px_hsl(var(--accent)/0.3)] hover:shadow-[0_0_50px_hsl(var(--accent)/0.5)] transition-all duration-300 hover:scale-105"
-              asChild
-            >
-              <Link to="/shop">SHOP THE LATEST DROP</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="bg-accent hover:bg-accent/90 text-accent-foreground font-heading font-bold text-base md:text-lg px-12 py-6 shadow-[0_0_30px_hsl(var(--accent)/0.3)] hover:shadow-[0_0_50px_hsl(var(--accent)/0.5)] transition-all duration-300 hover:scale-105"
+                asChild
+              >
+                <Link to="/shop">Shop the Collection</Link>
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="font-heading font-bold text-base md:text-lg px-12 py-6 hover:scale-105 transition-all duration-300"
+                asChild
+              >
+                <Link to="/about">About & Music</Link>
+              </Button>
+            </div>
+            <div className="mt-6">
+              <a 
+                href="https://linktr.ee/zmearya" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-accent transition-colors underline underline-offset-4"
+              >
+                Listen to the Music →
+              </a>
+            </div>
           </div>
         </div>
 
@@ -164,15 +187,37 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="font-heading text-xl font-bold mb-4">FIEND 4 DOPENESS</h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground mb-3">
                 Authentically unique streetwear for the culture.
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Artist and brand based in Los Angeles. Featured in{" "}
+                <a 
+                  href="https://voyagela.com/interview/life-work-zemmearija-caldwell-los-angeles/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors underline"
+                >
+                  VoyageLA
+                </a>
+                {" · "}
+                Listen to the music{" "}
+                <a 
+                  href="https://linktr.ee/zmearya" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-accent transition-colors underline"
+                >
+                  here
+                </a>
+                .
               </p>
             </div>
             <div>
               <h4 className="font-heading font-bold mb-4">QUICK LINKS</h4>
               <ul className="space-y-2 text-sm">
                 <li><Link to="/" className="hover:text-accent transition-colors">Shop</Link></li>
-                <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
+                <li><Link to="/about" className="hover:text-accent transition-colors">About & Music</Link></li>
               </ul>
             </div>
             <div>
