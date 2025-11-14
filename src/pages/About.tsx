@@ -37,7 +37,7 @@ const About = () => {
               </p>
 
               <p>
-                Born in Los Angeles, the founder grew up in the long shadow of the 1980s drug epidemic that tore through Black communities. She saw up close how addiction, judgment, and labels could cling to the people she loved; how a whole story could get boiled down to two words: "dope fiend."
+                Born in Los Angeles, the creator/founder grew up in the long shadow of the 1980s drug epidemic that tore through Black communities. She saw up close how addiction, judgment, and labels could cling to the people she loved; how a whole story could get boiled down to two words: "dope fiend."
               </p>
 
               <p>
@@ -72,7 +72,7 @@ const About = () => {
                     And anyone who simply loves the chase of becoming better — in life, art, and style.
 
 
-Understanding that good enough is not nearly enough...      
+ Those that understand good enough is not nearly enough...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
                   </p>
                 </div>
               </div>
