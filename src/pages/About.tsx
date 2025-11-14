@@ -90,10 +90,10 @@ const About = () => {
               </div>
 
               <div className="pt-8">
-                <Button size="lg" className="relative bg-accent hover:bg-accent/90 text-white font-heading font-bold px-14 py-7 text-xl hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(255,215,0,0.5)] hover:shadow-[0_0_50px_rgba(255,215,0,0.8)] w-full md:w-auto animate-[pulse_3s_ease-in-out_infinite] border-2 border-white/30 hover:border-white/60 group overflow-hidden" asChild>
+                <Button size="lg" className="relative bg-accent hover:bg-accent/90 text-white font-heading font-bold px-14 py-7 text-xl hover:scale-105 transition-all duration-700 shadow-[0_0_30px_rgba(255,215,0,0.5)] hover:shadow-[0_0_50px_rgba(255,215,0,0.8)] w-full md:w-auto animate-[pulse_6s_ease-in-out_infinite] group overflow-hidden" asChild>
                   <Link to="/shop">
                     <span className="relative z-10">SHOP THE COLLECTION</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-[1500ms]" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-[2500ms]" />
                   </Link>
                 </Button>
               </div>
