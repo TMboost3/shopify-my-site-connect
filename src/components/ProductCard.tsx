@@ -77,6 +77,13 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         </div>
       </CardHeader>
       <CardContent className="p-6">
+        {node.vendor && (
+          <div className="mb-2">
+            <span className="text-xs font-heading font-bold tracking-wider text-accent/70 uppercase">
+              {node.vendor}
+            </span>
+          </div>
+        )}
         <h3 
           className="font-heading font-bold text-lg mb-2 line-clamp-2 tracking-wide cursor-pointer group-hover:text-accent transition-colors"
           onClick={() => navigate(`/product/${node.handle}`)}

@@ -19,6 +19,7 @@ const Shop = () => {
   const [maxPrice, setMaxPrice] = useState(1000);
   const [showInStockOnly, setShowInStockOnly] = useState(false);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState("featured");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
@@ -56,6 +57,17 @@ const Shop = () => {
     return Array.from(categories).sort();
   }, [products]);
 
+  // Extract unique brands
+  const availableBrands = useMemo(() => {
+    const brands = new Set<string>();
+    products.forEach(product => {
+      if (product.node.vendor) {
+        brands.add(product.node.vendor);
+      }
+    });
+    return Array.from(brands).sort();
+  }, [products]);
+
   // Filter and sort products
   const filteredAndSortedProducts = useMemo(() => {
     let filtered = [...products];
@@ -75,6 +87,13 @@ const Shop = () => {
     if (selectedCategories.length > 0) {
       filtered = filtered.filter(product =>
         selectedCategories.includes(product.node.productType)
+      );
+    }
+
+    // Brand filter
+    if (selectedBrands.length > 0) {
+      filtered = filtered.filter(product =>
+        selectedBrands.includes(product.node.vendor)
       );
     }
 
@@ -121,20 +140,22 @@ const Shop = () => {
     });
 
     return filtered;
-  }, [products, priceRange, selectedCategories, showInStockOnly, sortBy]);
+  }, [products, priceRange, selectedCategories, selectedBrands, showInStockOnly, sortBy]);
 
   const activeFilterCount = useMemo(() => {
     let count = 0;
     if (priceRange[0] !== 0 || priceRange[1] !== maxPrice) count++;
     if (selectedCategories.length > 0) count++;
+    if (selectedBrands.length > 0) count++;
     if (showInStockOnly) count++;
     if (sortBy !== "featured") count++;
     return count;
-  }, [priceRange, maxPrice, selectedCategories, showInStockOnly, sortBy]);
+  }, [priceRange, maxPrice, selectedCategories, selectedBrands, showInStockOnly, sortBy]);
 
   const clearFilters = () => {
     setPriceRange([0, maxPrice]);
     setSelectedCategories([]);
+    setSelectedBrands([]);
     setShowInStockOnly(false);
     setSortBy("featured");
   };
@@ -144,6 +165,14 @@ const Shop = () => {
       prev.includes(category)
         ? prev.filter(c => c !== category)
         : [...prev, category]
+    );
+  };
+
+  const toggleBrand = (brand: string) => {
+    setSelectedBrands(prev =>
+      prev.includes(brand)
+        ? prev.filter(b => b !== brand)
+        : [...prev, brand]
     );
   };
 
@@ -187,6 +216,29 @@ const Shop = () => {
             </div>
           </AccordionContent>
         </AccordionItem>
+
+        {/* Brand */}
+        {availableBrands.length > 0 && (
+          <AccordionItem value="brand">
+            <AccordionTrigger className="text-sm font-heading font-bold tracking-wide">
+              BRAND
+            </AccordionTrigger>
+            <AccordionContent className="pt-4 space-y-3">
+              {availableBrands.map((brand) => (
+                <div key={brand} className="flex items-center space-x-2">
+                  <Checkbox
+                    id={`brand-${brand}`}
+                    checked={selectedBrands.includes(brand)}
+                    onCheckedChange={() => toggleBrand(brand)}
+                  />
+                  <label htmlFor={`brand-${brand}`} className="text-sm cursor-pointer">
+                    {brand}
+                  </label>
+                </div>
+              ))}
+            </AccordionContent>
+          </AccordionItem>
+        )}
 
         {/* Category */}
         {availableCategories.length > 0 && (
