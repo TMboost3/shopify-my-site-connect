@@ -12,7 +12,9 @@ const About = () => {
         <img src={aboutHero} alt="Fiend 4 Dopeness Brand" className="w-full h-full object-cover" />
         <div className="absolute inset-0 z-20 flex items-end md:items-center justify-center pb-16 md:pb-0">
           <div className="text-center px-4 animate-fade-up">
-            <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-black tracking-widest text-white mb-6 drop-shadow-2xl" style={{ textShadow: '0 0 30px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.6)' }}>
+            <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-black tracking-widest text-white mb-6 drop-shadow-2xl" style={{
+            textShadow: '0 0 30px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.6)'
+          }}>
               FIEND 4 DOPENESS
             </h1>
             <p className="text-xl md:text-2xl text-white/90 font-medium max-w-2xl mx-auto drop-shadow-lg">
@@ -31,11 +33,11 @@ const About = () => {
                 OUR STORY
               </h2>
               <p>
-                Fiend 4 Dopeness is a Black-owned lifestyle brand built on resilience, reinvention, and a real obsession with excellence.
+                Fiend 4 Dopeness is a streetwear brand built on resilience, reinvention, and a real pursuit of excellence.
               </p>
 
               <p>
-                Born and raised in South Los Angeles, the founder grew up in the long shadow of the 1980s drug epidemic that tore through Black communities. She saw up close how addiction, judgment, and labels could cling to the people she loved — how a whole story could get boiled down to two words: "dope fiend."
+                Born in Los Angeles, the founder grew up in the long shadow of the 1980s drug epidemic that tore through Black communities. She saw up close how addiction, judgment, and labels could cling to the people she loved; how a whole story could get boiled down to two words: "dope fiend."
               </p>
 
               <p>
@@ -43,7 +45,7 @@ const About = () => {
               </p>
 
               <p>
-                Fiend 4 Dopeness takes that phrase and turns it into something powerful. It's not about being addicted to destruction anymore — it's about being hooked on greatness. On better decisions. On better habits. On showing up as your best self in your craft, your community, and your everyday life.
+                Fiend 4 Dopeness takes that phrase and turns it into something powerful. It's not about being addicted to destruction anymore, it's about being hooked on greatness. On better decisions. On better habits. On showing up as your best self in your craft, your community, and your everyday life.
               </p>
             </div>
 
@@ -68,13 +70,16 @@ const About = () => {
 
                   <p className="text-lg md:text-xl font-semibold leading-relaxed text-white/95">
                     And anyone who simply loves the chase of becoming better — in life, art, and style.
+
+
+Understanding that good enough is not nearly enough...      
                   </p>
                 </div>
               </div>
 
               <div className="space-y-4 text-base md:text-lg">
                 <p className="leading-relaxed">
-                  Fiend 4 Dopeness is a reminder that where you come from doesn't get to decide where you're going. We don't run from our story — we build on it.
+                  Fiend 4 Dopeness is a reminder that where you come from doesn't get to decide where you're going. We don't run from our story, we build on it.
                 </p>
 
                 <p className="font-heading text-2xl md:text-3xl font-black text-accent">
