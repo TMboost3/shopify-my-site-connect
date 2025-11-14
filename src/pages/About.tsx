@@ -18,30 +18,48 @@ const About = () => {
             </h1>
             
             <p>
-              Fiend 4 Dopeness is a streetwear brand created by Los Angeles–based artist, designer, and musician Zemmearija Caldwell. She built this brand as a way to wear her world out loud. Every piece is a mix of street, emotion, and attitude — made for people who feel a little different and don't mind being seen.
+              Fiend 4 Dopeness is a Black-owned lifestyle brand built on resilience, reinvention, and a real obsession with excellence.
             </p>
 
             <p>
-              What started as sketches and characters turned into full looks, capsule drops, and a signature mascot that shows up across the line. The clothes aren't just "merch" — they're moving pieces of her stories, moods, and music. From everyday staples to limited capsules, the focus is on strong silhouettes, original artwork, and details that make you look twice.
+              Born and raised in South Los Angeles, the founder grew up in the long shadow of the 1980s drug epidemic that tore through Black communities. She saw up close how addiction, judgment, and labels could cling to the people she loved — how a whole story could get boiled down to two words: "dope fiend."
             </p>
 
             <p>
-              Fiend 4 Dopeness treats fashion as self-expression first: fits are built to be lived in, but bold enough to stand out. Limited runs, special drops, and select custom work keep things exclusive, so when you find a piece you love, you know you won't see it everywhere.
+              She chose not to live under that label. She chose to flip it.
             </p>
 
-            <div className="bg-muted p-8 border-l-4 border-accent">
-              <p className="text-base">
-                Learn more about her journey in her feature on VoyageLA.
-              </p>
-              <a 
-                href="https://voyagela.com/interview/life-work-zemmearija-caldwell-los-angeles/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-block mt-4 text-accent hover:text-accent/80 font-bold transition-colors"
-              >
-                Read the VoyageLA feature →
-              </a>
-            </div>
+            <p>
+              Fiend 4 Dopeness takes that phrase and turns it into something powerful. It's not about being addicted to destruction anymore — it's about being hooked on greatness. On better decisions. On better habits. On showing up as your best self in your craft, your community, and your everyday life.
+            </p>
+
+            <p className="font-bold">
+              This brand is for:
+            </p>
+
+            <p>
+              The ones who were counted out but kept going anyway.
+            </p>
+
+            <p>
+              The underdogs who turned pain into purpose.
+            </p>
+
+            <p>
+              The kids of the struggle who chose discipline, creativity, and self-belief.
+            </p>
+
+            <p>
+              And anyone who simply loves the chase of becoming better — in life, art, and style.
+            </p>
+
+            <p>
+              Fiend 4 Dopeness is a reminder that where you come from doesn't get to decide where you're going. We don't run from our story — we build on it.
+            </p>
+
+            <p className="font-bold text-xl mt-8">
+              Not addicted to the problem. Addicted to the progress.
+            </p>
           </div>
 
           <div className="mt-16 text-center">
