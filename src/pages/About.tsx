@@ -8,14 +8,6 @@ const About = () => {
     <div className="min-h-screen bg-background font-body">
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative h-[40vh] sm:h-[50vh] md:h-[55vh] lg:h-[60vh] flex items-center justify-center bg-background overflow-hidden">
-        <img 
-          src={aboutHero} 
-          alt="Fiend 4 Dopeness About Us - Unique streetwear brand" 
-          className="w-full h-full object-contain sm:object-cover object-center animate-fade-in"
-        />
-      </section>
 
       {/* Brand Story */}
       <section className="py-24 px-4">
