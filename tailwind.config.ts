@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        'heading': ['Work Sans', 'sans-serif'], // Acumin Pro Wide alternative
+        'heading': ['Bebas Neue', 'sans-serif'], // Bold streetwear style
         'body': ['Inter', 'sans-serif'],
       },
       colors: {
