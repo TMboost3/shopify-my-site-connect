@@ -2,135 +2,179 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import aboutHero from "@/assets/about-hero.png";
+
 const About = () => {
   return <div className="min-h-screen bg-background font-body">
       <Header />
 
-
-      {/* Brand Story */}
-      <section className="py-24 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <div className="space-y-8 text-lg leading-relaxed animate-fade-up">
-            <h1 className="font-heading text-4xl md:text-5xl font-black tracking-tight mb-12">
-              ABOUT FIEND 4 DOPENESS
+      {/* Hero Section */}
+      <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background z-10" />
+        <img 
+          src={aboutHero} 
+          alt="Fiend 4 Dopeness Brand" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 z-20 flex items-center justify-center">
+          <div className="text-center px-4 animate-fade-up">
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 drop-shadow-2xl">
+              FIEND 4 DOPENESS
             </h1>
-            
-            <p>
-              Fiend 4 Dopeness is a Black-owned lifestyle brand built on resilience, reinvention, and a real obsession with excellence.
-            </p>
-
-            <p>
-              Born and raised in South Los Angeles, the founder grew up in the long shadow of the 1980s drug epidemic that tore through Black communities. She saw up close how addiction, judgment, and labels could cling to the people she loved most how a whole story could get boiled down to two words: "dope fiend."
-            </p>
-
-            <p>
-              She chose not to live under that label. She chose to flip it.
-            </p>
-
-            <p>
-              Fiend 4 Dopeness takes that phrase and turns it into something powerful. It's not about being addicted to destruction anymore — it's about being hooked on greatness. On better decisions. On better habits. On showing up as your best self in your craft, your community, and your everyday life.
-            </p>
-
-            <div className="bg-gradient-to-br from-accent/10 to-primary/10 p-8 md:p-12 rounded-lg border-l-4 border-accent my-12">
-              <p className="font-heading text-2xl md:text-3xl font-black mb-8 text-accent">
-                This brand is for:
-              </p>
-
-              <div className="space-y-6">
-                <p className="text-xl md:text-2xl font-semibold leading-relaxed">
-                  The ones who were counted out but kept going anyway.
-                </p>
-
-                <p className="text-xl md:text-2xl font-semibold leading-relaxed">
-                  The underdogs who turned pain into purpose.
-                </p>
-
-                <p className="text-xl md:text-2xl font-semibold leading-relaxed">
-                  The kids of the struggle who chose discipline, creativity, and self-belief.
-                </p>
-
-                <p className="text-xl md:text-2xl font-semibold leading-relaxed">
-                  And anyone who simply loves the chase of becoming better — in life, art, and style.
-                </p>
-              </div>
-            </div>
-
-            <p>
-              Fiend 4 Dopeness is a reminder that where you come from doesn't get to decide where you're going. We don't run from our story — we build on it.
-            </p>
-
-            <p className="font-bold text-xl mt-8">
+            <p className="text-xl md:text-2xl text-white/90 font-medium max-w-2xl mx-auto drop-shadow-lg">
               Not addicted to the problem. Addicted to the progress.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-16 text-center">
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-heading font-bold px-12 py-6 hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/30" asChild>
-              <Link to="/shop">SHOP NOW</Link>
-            </Button>
+      {/* Brand Story */}
+      <section className="py-20 md:py-32 px-4">
+        <div className="container mx-auto max-w-5xl">
+          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+            <div className="space-y-6 text-base md:text-lg leading-relaxed animate-fade-up">
+              <h2 className="font-heading text-3xl md:text-4xl font-black tracking-tight mb-8 text-accent">
+                OUR STORY
+              </h2>
+              <p>
+                Fiend 4 Dopeness is a Black-owned lifestyle brand built on resilience, reinvention, and a real obsession with excellence.
+              </p>
+
+              <p>
+                Born and raised in South Los Angeles, the founder grew up in the long shadow of the 1980s drug epidemic that tore through Black communities. She saw up close how addiction, judgment, and labels could cling to the people she loved — how a whole story could get boiled down to two words: "dope fiend."
+              </p>
+
+              <p>
+                She chose not to live under that label. She chose to flip it.
+              </p>
+
+              <p>
+                Fiend 4 Dopeness takes that phrase and turns it into something powerful. It's not about being addicted to destruction anymore — it's about being hooked on greatness. On better decisions. On better habits. On showing up as your best self in your craft, your community, and your everyday life.
+              </p>
+            </div>
+
+            <div className="space-y-8 animate-fade-up delay-100">
+              <div className="bg-gradient-to-br from-accent via-accent/90 to-accent/80 p-10 md:p-12 rounded-2xl shadow-2xl border border-accent/20">
+                <p className="font-heading text-2xl md:text-3xl font-black mb-8 text-white">
+                  This brand is for:
+                </p>
+
+                <div className="space-y-5">
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-white/95">
+                    The ones who were counted out but kept going anyway.
+                  </p>
+
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-white/95">
+                    The underdogs who turned pain into purpose.
+                  </p>
+
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-white/95">
+                    The kids of the struggle who chose discipline, creativity, and self-belief.
+                  </p>
+
+                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-white/95">
+                    And anyone who simply loves the chase of becoming better — in life, art, and style.
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-4 text-base md:text-lg">
+                <p className="leading-relaxed">
+                  Fiend 4 Dopeness is a reminder that where you come from doesn't get to decide where you're going. We don't run from our story — we build on it.
+                </p>
+
+                <p className="font-heading text-2xl md:text-3xl font-black text-accent">
+                  Not addicted to the problem.<br />Addicted to the progress.
+                </p>
+              </div>
+
+              <div className="pt-8">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-heading font-bold px-12 py-6 text-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/30 w-full md:w-auto" asChild>
+                  <Link to="/shop">SHOP THE COLLECTION</Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Music Section */}
-      <section className="py-24 px-4 bg-gradient-to-b from-background to-muted/50">
-        <div className="container mx-auto max-w-4xl">
-          <div className="space-y-8 text-lg leading-relaxed">
-            <h2 className="font-heading text-3xl md:text-4xl font-black tracking-tight mb-8">
-              MUSIC BEHIND THE BRAND
-            </h2>
-            
-            <p>
-              Alongside designing, Zemmearija is also a recording artist. The same energy that shows up in the graphics and character designs lives in her music — personal, expressive, and straight from her point of view. The brand lets you tap into both sides at once: the sound and the style.
-            </p>
+      <section className="py-20 md:py-32 px-4 bg-gradient-to-b from-background via-muted/30 to-background">
+        <div className="container mx-auto max-w-6xl">
+          <div className="bg-black text-white p-8 md:p-16 rounded-3xl shadow-2xl">
+            <div className="max-w-3xl mx-auto space-y-8 text-center">
+              <h2 className="font-heading text-4xl md:text-5xl font-black tracking-tight">
+                THE SOUND
+              </h2>
+              
+              <div className="h-1 w-24 bg-accent mx-auto" />
+              
+              <p className="text-lg md:text-xl leading-relaxed text-gray-300">
+                Alongside designing, Zemmearija is also a recording artist. The same energy that shows up in the graphics and character designs lives in her music — personal, expressive, and straight from her point of view. The brand lets you tap into both sides at once: the sound and the style.
+              </p>
 
-            <p className="text-xl font-bold">
-              Tap in below to listen and support.
-            </p>
+              <p className="text-xl md:text-2xl font-bold text-accent">
+                Tap in below to listen and support.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-heading font-bold px-8 py-6 hover:scale-105 transition-all duration-300" asChild>
-                <a href="https://linktr.ee/zmearya" target="_blank" rel="noopener noreferrer">
-                  Listen & Stream Music
-                </a>
-              </Button>
-              <Button size="lg" variant="outline" className="font-heading font-bold px-8 py-6 hover:scale-105 transition-all duration-300" asChild>
-                <a href="https://linktr.ee/zmearya" target="_blank" rel="noopener noreferrer">
-                  Buy Digital Music
-                </a>
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-heading font-bold px-10 py-6 text-lg hover:scale-105 transition-all duration-300 shadow-lg" asChild>
+                  <a href="https://linktr.ee/zmearya" target="_blank" rel="noopener noreferrer">
+                    Stream Music
+                  </a>
+                </Button>
+                <Button size="lg" className="bg-white hover:bg-gray-100 text-black font-heading font-bold px-10 py-6 text-lg hover:scale-105 transition-all duration-300 shadow-lg" asChild>
+                  <a href="https://linktr.ee/zmearya" target="_blank" rel="noopener noreferrer">
+                    Buy Digital Music
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Values Section */}
-      <section className="py-24 bg-gradient-to-b from-muted/30 to-background">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl md:text-5xl font-black tracking-tight mb-4">
-              OUR VALUES
+      <section className="py-20 md:py-32 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-16 animate-fade-up">
+            <h2 className="font-heading text-4xl md:text-5xl font-black tracking-tight mb-6">
+              WHAT WE STAND FOR
             </h2>
             <div className="h-1 w-24 bg-accent mx-auto" />
           </div>
-          <div className="grid md:grid-cols-3 gap-12 max-w-5xl mx-auto">
-            <div className="text-center space-y-4 p-6 hover:bg-muted/50 transition-colors rounded-lg">
-              <h3 className="font-heading text-2xl font-bold">UNIQUENESS</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Exclusive designs that you won&apos;t find anywhere else, making you stand out from the crowd.
-              </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="group relative bg-gradient-to-br from-muted/50 to-muted/30 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50">
+              <div className="space-y-4">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                  <span className="text-3xl font-black text-accent">01</span>
+                </div>
+                <h3 className="font-heading text-2xl md:text-3xl font-black">UNIQUENESS</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Exclusive designs that you won't find anywhere else, making you stand out from the crowd.
+                </p>
+              </div>
             </div>
-            <div className="text-center space-y-4 p-6 hover:bg-muted/50 transition-colors rounded-lg">
-              <h3 className="font-heading text-2xl font-bold">QUALITY</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Premium materials and impeccable detailing in every piece we create.
-              </p>
+            <div className="group relative bg-gradient-to-br from-muted/50 to-muted/30 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50">
+              <div className="space-y-4">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                  <span className="text-3xl font-black text-accent">02</span>
+                </div>
+                <h3 className="font-heading text-2xl md:text-3xl font-black">QUALITY</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Premium materials and impeccable detailing in every piece we create.
+                </p>
+              </div>
             </div>
-            <div className="text-center space-y-4 p-6 hover:bg-muted/50 transition-colors rounded-lg">
-              <h3 className="font-heading text-2xl font-bold">EXCELLENCE</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Exceptional shopping experience from browsing to delivery, with dedicated customer service.
-              </p>
+            <div className="group relative bg-gradient-to-br from-muted/50 to-muted/30 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50">
+              <div className="space-y-4">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
+                  <span className="text-3xl font-black text-accent">03</span>
+                </div>
+                <h3 className="font-heading text-2xl md:text-3xl font-black">EXCELLENCE</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  Exceptional shopping experience from browsing to delivery, with dedicated customer service.
+                </p>
+              </div>
             </div>
           </div>
         </div>
