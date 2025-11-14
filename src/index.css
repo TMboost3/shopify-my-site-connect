@@ -44,6 +44,12 @@ All colors MUST be HSL.
     --shadow-dramatic: 0 20px 60px -15px rgba(0, 0, 0, 0.1);
     --shadow-accent: 0 10px 40px -10px hsla(330, 81%, 60%, 0.3);
 
+    /* Brand-specific colors */
+    --brand-fiend: 330 81% 60%; /* Vibrant Pink for Fiend for Dopeness */
+    --brand-fiend-foreground: 0 0% 100%;
+    --brand-r2ba: 220 90% 56%; /* Bold Blue for Right to Bare Arms */
+    --brand-r2ba-foreground: 0 0% 100%;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 0 0% 0%;
     --sidebar-primary: 0 0% 0%;
@@ -88,6 +94,12 @@ All colors MUST be HSL.
     --shadow-dramatic: 0 20px 60px -15px rgba(255, 255, 255, 0.1);
     --shadow-accent: 0 10px 40px -10px hsla(330, 81%, 60%, 0.3);
     
+    /* Brand-specific colors */
+    --brand-fiend: 330 81% 60%; /* Vibrant Pink for Fiend for Dopeness */
+    --brand-fiend-foreground: 0 0% 100%;
+    --brand-r2ba: 220 90% 56%; /* Bold Blue for Right to Bare Arms */
+    --brand-r2ba-foreground: 0 0% 100%;
+
     --sidebar-background: 0 0% 5%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 0 0% 100%;

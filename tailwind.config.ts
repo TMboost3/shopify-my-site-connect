@@ -51,6 +51,12 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        brand: {
+          fiend: "hsl(var(--brand-fiend))",
+          "fiend-foreground": "hsl(var(--brand-fiend-foreground))",
+          r2ba: "hsl(var(--brand-r2ba))",
+          "r2ba-foreground": "hsl(var(--brand-r2ba-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
