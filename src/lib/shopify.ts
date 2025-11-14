@@ -6,6 +6,21 @@ const SHOPIFY_STORE_PERMANENT_DOMAIN = '844ecb-2.myshopify.com';
 const SHOPIFY_STOREFRONT_URL = `https://${SHOPIFY_STORE_PERMANENT_DOMAIN}/api/${SHOPIFY_API_VERSION}/graphql.json`;
 const SHOPIFY_STOREFRONT_TOKEN = '8a5f126f30f74187efd5704b82ec7ee5';
 
+// Helper function to determine brand from product title
+export function getBrandFromTitle(title: string): string {
+  const titleLower = title.toLowerCase();
+  
+  if (titleLower.includes('fiend for dopeness') || titleLower.includes('fiend4dopeness')) {
+    return 'FIEND FOR DOPENESS';
+  }
+  
+  if (titleLower.includes('r2ba') || titleLower.includes('right to bare arms')) {
+    return 'RIGHT TO BARE ARMS';
+  }
+  
+  return 'FIEND FOR DOPENESS'; // Default brand
+}
+
 export interface ShopifyProduct {
   node: {
     id: string;
@@ -141,7 +156,16 @@ const STOREFRONT_QUERY = `
 
 export async function fetchProducts(count: number = 50): Promise<ShopifyProduct[]> {
   const data = await storefrontApiRequest(STOREFRONT_QUERY, { first: count });
-  return data?.data?.products?.edges || [];
+  const products = data?.data?.products?.edges || [];
+  
+  // Map vendor field based on title keywords
+  return products.map((product: ShopifyProduct) => ({
+    ...product,
+    node: {
+      ...product.node,
+      vendor: getBrandFromTitle(product.node.title)
+    }
+  }));
 }
 
 // GraphQL query to fetch single product by handle
@@ -199,8 +223,13 @@ export async function fetchProductByHandle(handle: string): Promise<ShopifyProdu
   
   if (!product) return null;
   
-  // Wrap in the same structure as fetchProducts for consistency
-  return { node: product };
+  // Wrap in the same structure as fetchProducts and apply brand mapping
+  return { 
+    node: {
+      ...product,
+      vendor: getBrandFromTitle(product.title)
+    }
+  };
 }
 
 // GraphQL mutation to create cart

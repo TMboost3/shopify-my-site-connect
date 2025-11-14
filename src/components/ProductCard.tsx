@@ -78,8 +78,14 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       </CardHeader>
       <CardContent className="p-6">
         {node.vendor && (
-          <div className="mb-2">
-            <span className="text-xs font-heading font-bold tracking-wider text-accent/70 uppercase">
+          <div className="mb-3">
+            <span 
+              className={`inline-block px-3 py-1 text-xs font-heading font-bold tracking-widest uppercase rounded-full ${
+                node.vendor === 'FIEND FOR DOPENESS' 
+                  ? 'bg-brand-fiend text-brand-fiend-foreground' 
+                  : 'bg-brand-r2ba text-brand-r2ba-foreground'
+              }`}
+            >
               {node.vendor}
             </span>
           </div>
