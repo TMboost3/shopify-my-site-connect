@@ -69,7 +69,7 @@ const Index = () => {
               key={idx}
               className="absolute inset-0 transition-opacity duration-1000"
               style={{
-                opacity: idx === currentImageIndex ? 0.15 : 0,
+                opacity: idx === currentImageIndex ? 0.4 : 0,
               }}
             >
               <img
@@ -79,7 +79,7 @@ const Index = () => {
               />
             </div>
           ))}
-          <div className="absolute inset-0 bg-background/80" />
+          <div className="absolute inset-0 bg-background/50" />
         </div>
 
         {/* Animated gradient background */}
