@@ -6,9 +6,44 @@ import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import heroLogo from "@/assets/hero-logo.png";
+import community1 from "@/assets/community-1.png";
+import community2 from "@/assets/community-2.png";
+import community3 from "@/assets/community-3.png";
+import community4 from "@/assets/community-4.png";
+import community5 from "@/assets/community-5.png";
+import community6 from "@/assets/community-6.png";
+import community7 from "@/assets/community-7.png";
+import community8 from "@/assets/community-8.png";
+import community9 from "@/assets/community-9.png";
+import community10 from "@/assets/community-10.png";
+import community11 from "@/assets/community-11.png";
+import community12 from "@/assets/community-12.png";
+import community13 from "@/assets/community-13.png";
+import community14 from "@/assets/community-14.png";
+import community15 from "@/assets/community-15.png";
+import community16 from "@/assets/community-16.png";
+import community17 from "@/assets/community-17.png";
+import community18 from "@/assets/community-18.png";
+import community19 from "@/assets/community-19.png";
+import community20 from "@/assets/community-20.png";
+const communityImages = [
+  community1, community2, community3, community4, community5,
+  community6, community7, community8, community9, community10,
+  community11, community12, community13, community14, community15,
+  community16, community17, community18, community19, community20
+];
+
 const Index = () => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % communityImages.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
   useEffect(() => {
     const loadProducts = async () => {
       try {
@@ -27,12 +62,32 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 bg-background text-foreground overflow-hidden">
+        {/* Community images slideshow */}
+        <div className="absolute inset-0 z-0">
+          {communityImages.map((img, idx) => (
+            <div
+              key={idx}
+              className="absolute inset-0 transition-opacity duration-1000"
+              style={{
+                opacity: idx === currentImageIndex ? 0.15 : 0,
+              }}
+            >
+              <img
+                src={img}
+                alt="Community"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+          <div className="absolute inset-0 bg-background/80" />
+        </div>
+
         {/* Animated gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-accent/5 to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--accent)/0.08),transparent_50%)]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/50 via-accent/5 to-background/50 z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--accent)/0.08),transparent_50%)] z-10" />
         
         {/* Grid overlay */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
+        <div className="absolute inset-0 opacity-[0.03] z-10" style={{
         backgroundImage: 'linear-gradient(rgba(0,0,0,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.5) 1px, transparent 1px)',
         backgroundSize: '50px 50px'
       }} />
