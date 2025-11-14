@@ -33,25 +33,29 @@ const About = () => {
               Fiend 4 Dopeness takes that phrase and turns it into something powerful. It's not about being addicted to destruction anymore — it's about being hooked on greatness. On better decisions. On better habits. On showing up as your best self in your craft, your community, and your everyday life.
             </p>
 
-            <p className="font-bold">
-              This brand is for:
-            </p>
+            <div className="bg-gradient-to-br from-accent/10 to-primary/10 p-8 md:p-12 rounded-lg border-l-4 border-accent my-12">
+              <p className="font-heading text-2xl md:text-3xl font-black mb-8 text-accent">
+                This brand is for:
+              </p>
 
-            <p>
-              The ones who were counted out but kept going anyway.
-            </p>
+              <div className="space-y-6">
+                <p className="text-xl md:text-2xl font-semibold leading-relaxed">
+                  The ones who were counted out but kept going anyway.
+                </p>
 
-            <p>
-              The underdogs who turned pain into purpose.
-            </p>
+                <p className="text-xl md:text-2xl font-semibold leading-relaxed">
+                  The underdogs who turned pain into purpose.
+                </p>
 
-            <p>
-              The kids of the struggle who chose discipline, creativity, and self-belief.
-            </p>
+                <p className="text-xl md:text-2xl font-semibold leading-relaxed">
+                  The kids of the struggle who chose discipline, creativity, and self-belief.
+                </p>
 
-            <p>
-              And anyone who simply loves the chase of becoming better — in life, art, and style.
-            </p>
+                <p className="text-xl md:text-2xl font-semibold leading-relaxed">
+                  And anyone who simply loves the chase of becoming better — in life, art, and style.
+                </p>
+              </div>
+            </div>
 
             <p>
               Fiend 4 Dopeness is a reminder that where you come from doesn't get to decide where you're going. We don't run from our story — we build on it.
