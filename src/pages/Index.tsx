@@ -42,22 +42,14 @@ const Index = () => {
       try {
         const productsData = await fetchProducts();
         // Filter out products that are out of stock or the Digital Girl Sweatsuit
-        let inStockProducts = productsData.filter(product => 
-          product.node.variants.edges.some(v => v.node.availableForSale) &&
-          !product.node.title.includes("DIGITAL GIRL SWEATSUIT")
-        );
-        
+        let inStockProducts = productsData.filter(product => product.node.variants.edges.some(v => v.node.availableForSale) && !product.node.title.includes("DIGITAL GIRL SWEATSUIT"));
+
         // Prioritize stamped crewneck for featured section
-        const crewneckIndex = inStockProducts.findIndex(p => 
-          p.node.title.toLowerCase().includes("stamped") && 
-          p.node.title.toLowerCase().includes("crewneck")
-        );
-        
+        const crewneckIndex = inStockProducts.findIndex(p => p.node.title.toLowerCase().includes("stamped") && p.node.title.toLowerCase().includes("crewneck"));
         if (crewneckIndex > 0) {
           const crewneck = inStockProducts.splice(crewneckIndex, 1)[0];
           inStockProducts.unshift(crewneck);
         }
-        
         setProducts(inStockProducts);
       } catch (error) {
         console.error('Error loading products:', error);
@@ -107,7 +99,7 @@ const Index = () => {
           }} />
             
             <p className="text-lg md:text-xl font-light leading-relaxed mb-12 text-muted-foreground max-w-3xl mx-auto">
-              Dope by Design, Not Default.
+              Dopeness by Design, Not Default.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-heading font-bold text-base md:text-lg px-12 py-6 shadow-[0_0_30px_hsl(var(--accent)/0.3)] hover:shadow-[0_0_50px_hsl(var(--accent)/0.5)] transition-all duration-300 hover:scale-105" asChild>
