@@ -40,13 +40,17 @@ const Index = () => {
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto -mt-20">
           <div className="animate-fade-in">
             <img src={heroLogo} alt="FIEND 4 DOPENESS" className="w-full max-w-2xl mx-auto mb-4 animate-scale-in" />
-            <p className="text-xl md:text-2xl font-heading font-bold tracking-widest text-accent animate-fade-in mb-6" style={{ animationDelay: '0.3s', animationFillMode: 'backwards' }}>
+            <p className="text-xl md:text-2xl font-heading font-bold tracking-widest text-accent animate-fade-in mb-6" style={{
+            animationDelay: '0.3s',
+            animationFillMode: 'backwards'
+          }}>
               ADDICTED TO GREATNESS
             </p>
-            <div className="h-1 w-24 bg-accent mx-auto mb-8 animate-fade-in" style={{ animationDelay: '0.5s', animationFillMode: 'backwards' }} />
-            <h1 className="text-3xl md:text-5xl font-heading font-black tracking-tight mb-4">
-              WEAR YOUR WORLD OUT LOUD
-            </h1>
+            <div className="h-1 w-24 bg-accent mx-auto mb-8 animate-fade-in" style={{
+            animationDelay: '0.5s',
+            animationFillMode: 'backwards'
+          }} />
+            
             <p className="text-lg md:text-xl font-light leading-relaxed mb-12 text-muted-foreground max-w-3xl mx-auto">
               Streetwear and music by Los Angeles artist  — built around one iconic character and a lot of emotion.
             </p>
