@@ -14,11 +14,19 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const navigate = useNavigate();
   const { node } = product;
   
+  const variant = node.variants.edges[0]?.node;
+  const isOutOfStock = !variant?.availableForSale;
+
   const handleAddToCart = () => {
-    const variant = node.variants.edges[0]?.node;
-    
     if (!variant) {
       toast.error("Product unavailable");
+      return;
+    }
+
+    if (isOutOfStock) {
+      toast.error("This item is out of stock", {
+        position: "top-center"
+      });
       return;
     }
 
@@ -52,9 +60,14 @@ export const ProductCard = ({ product }: ProductCardProps) => {
               <img
                 src={image.url}
                 alt={image.altText || node.title}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ${isOutOfStock ? 'opacity-50 grayscale' : ''}`}
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300" />
+              {isOutOfStock && (
+                <div className="absolute top-4 right-4 bg-destructive text-destructive-foreground px-3 py-1 rounded-md font-heading font-bold text-sm">
+                  OUT OF STOCK
+                </div>
+              )}
             </>
           ) : (
             <div className="w-full h-full flex items-center justify-center text-muted-foreground">
@@ -82,9 +95,10 @@ export const ProductCard = ({ product }: ProductCardProps) => {
       <CardFooter className="p-6 pt-0">
         <Button 
           onClick={handleAddToCart} 
-          className="w-full bg-accent hover:bg-accent/90 text-white font-heading font-bold group-hover:shadow-lg group-hover:shadow-accent/30 transition-all duration-300"
+          disabled={isOutOfStock}
+          className="w-full bg-accent hover:bg-accent/90 text-white font-heading font-bold group-hover:shadow-lg group-hover:shadow-accent/30 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          ADD TO CART
+          {isOutOfStock ? 'OUT OF STOCK' : 'ADD TO CART'}
         </Button>
       </CardFooter>
     </Card>
