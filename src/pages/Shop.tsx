@@ -105,6 +105,16 @@ const Shop = () => {
         break;
     }
 
+    // Always push out of stock items to the end regardless of sort
+    filtered.sort((a, b) => {
+      const aInStock = a.node.variants.edges.some(v => v.node.availableForSale);
+      const bInStock = b.node.variants.edges.some(v => v.node.availableForSale);
+      
+      if (aInStock && !bInStock) return -1;
+      if (!aInStock && bInStock) return 1;
+      return 0;
+    });
+
     return filtered;
   }, [products, priceRange, selectedCategories, showInStockOnly, sortBy]);
 

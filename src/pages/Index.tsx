@@ -41,7 +41,11 @@ const Index = () => {
     const loadProducts = async () => {
       try {
         const productsData = await fetchProducts();
-        setProducts(productsData);
+        // Filter out products that are out of stock for featured section
+        const inStockProducts = productsData.filter(product => 
+          product.node.variants.edges.some(v => v.node.availableForSale)
+        );
+        setProducts(inStockProducts);
       } catch (error) {
         console.error('Error loading products:', error);
       } finally {
