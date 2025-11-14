@@ -118,7 +118,7 @@ const About = () => {
                   </a>
                 </Button>
                 <Button size="lg" className="bg-white hover:bg-gray-100 text-black font-heading font-bold px-10 py-6 text-lg hover:scale-105 transition-all duration-300 shadow-lg" asChild>
-                  <a href="https://linktr.ee/zmearya" target="_blank" rel="noopener noreferrer">
+                  <a href="https://geo.music.apple.com/us/album/_/1804323440?app=itunes&at=1000lHKX&ct=linktree_http&i=1804323449&itscg=30200&itsct=lt_m&ls=1&mt=1" target="_blank" rel="noopener noreferrer">
                     Buy Digital Music
                   </a>
                 </Button>
