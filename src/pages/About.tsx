@@ -2,10 +2,8 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import aboutHero from "@/assets/about-hero.png";
-
 const About = () => {
-  return (
-    <div className="min-h-screen bg-background font-body">
+  return <div className="min-h-screen bg-background font-body">
       <Header />
 
 
@@ -22,7 +20,7 @@ const About = () => {
             </p>
 
             <p>
-              Born and raised in South Los Angeles, the founder grew up in the long shadow of the 1980s drug epidemic that tore through Black communities. She saw up close how addiction, judgment, and labels could cling to the people she loved — how a whole story could get boiled down to two words: "dope fiend."
+              Born and raised in South Los Angeles, the founder grew up in the long shadow of the 1980s drug epidemic that tore through Black communities. She saw up close how addiction, judgment, and labels could cling to the people she loved most how a whole story could get boiled down to two words: "dope fiend."
             </p>
 
             <p>
@@ -67,11 +65,7 @@ const About = () => {
           </div>
 
           <div className="mt-16 text-center">
-            <Button 
-              size="lg"
-              className="bg-accent hover:bg-accent/90 text-white font-heading font-bold px-12 py-6 hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/30"
-              asChild
-            >
+            <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-heading font-bold px-12 py-6 hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/30" asChild>
               <Link to="/shop">SHOP NOW</Link>
             </Button>
           </div>
@@ -95,21 +89,12 @@ const About = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Button 
-                size="lg"
-                className="bg-accent hover:bg-accent/90 text-white font-heading font-bold px-8 py-6 hover:scale-105 transition-all duration-300"
-                asChild
-              >
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-heading font-bold px-8 py-6 hover:scale-105 transition-all duration-300" asChild>
                 <a href="https://linktr.ee/zmearya" target="_blank" rel="noopener noreferrer">
                   Listen & Stream Music
                 </a>
               </Button>
-              <Button 
-                size="lg"
-                variant="outline"
-                className="font-heading font-bold px-8 py-6 hover:scale-105 transition-all duration-300"
-                asChild
-              >
+              <Button size="lg" variant="outline" className="font-heading font-bold px-8 py-6 hover:scale-105 transition-all duration-300" asChild>
                 <a href="https://linktr.ee/zmearya" target="_blank" rel="noopener noreferrer">
                   Buy Digital Music
                 </a>
@@ -162,22 +147,12 @@ const About = () => {
               </p>
               <p className="text-xs text-gray-500">
                 Artist and brand based in Los Angeles. Featured in{" "}
-                <a 
-                  href="https://voyagela.com/interview/life-work-zemmearija-caldwell-los-angeles/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-accent transition-colors underline"
-                >
+                <a href="https://voyagela.com/interview/life-work-zemmearija-caldwell-los-angeles/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors underline">
                   VoyageLA
                 </a>
                 {" · "}
                 Listen to the music{" "}
-                <a 
-                  href="https://linktr.ee/zmearya" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="hover:text-accent transition-colors underline"
-                >
+                <a href="https://linktr.ee/zmearya" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors underline">
                   here
                 </a>
                 .
@@ -204,8 +179,6 @@ const About = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default About;
