@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         'heading': ['Bebas Neue', 'sans-serif'], // Bold streetwear style
-        'body': ['Inter', 'sans-serif'],
+        'body': ['Poppins', 'sans-serif'], // Modern, attention-grabbing
       },
       colors: {
         border: "hsl(var(--border))",
