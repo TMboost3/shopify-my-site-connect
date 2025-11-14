@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
 import { Header } from "@/components/Header";
+import { PromoPopup } from "@/components/PromoPopup";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -61,6 +62,7 @@ const Index = () => {
   }, []);
   return <div className="min-h-screen bg-background font-body">
       <Header />
+      <PromoPopup />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 bg-background text-foreground overflow-hidden">
