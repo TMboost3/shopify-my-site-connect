@@ -12,7 +12,7 @@ const About = () => {
         <img src={aboutHero} alt="Fiend 4 Dopeness Brand" className="w-full h-full object-cover" />
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center px-4 animate-fade-up">
-            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 drop-shadow-2xl">
+            <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black tracking-wider text-white mb-6 drop-shadow-2xl">
               FIEND 4 DOPENESS
             </h1>
             <p className="text-xl md:text-2xl text-white/90 font-medium max-w-2xl mx-auto drop-shadow-lg">
