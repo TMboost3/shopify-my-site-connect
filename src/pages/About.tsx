@@ -2,7 +2,6 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import aboutHero from "@/assets/about-hero.png";
-
 const About = () => {
   return <div className="min-h-screen bg-background font-body">
       <Header />
@@ -10,11 +9,7 @@ const About = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background z-10" />
-        <img 
-          src={aboutHero} 
-          alt="Fiend 4 Dopeness Brand" 
-          className="w-full h-full object-cover"
-        />
+        <img src={aboutHero} alt="Fiend 4 Dopeness Brand" className="w-full h-full object-cover" />
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center px-4 animate-fade-up">
             <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-white mb-6 drop-shadow-2xl">
@@ -109,7 +104,7 @@ const About = () => {
               <div className="h-1 w-24 bg-accent mx-auto" />
               
               <p className="text-lg md:text-xl leading-relaxed text-gray-300">
-                Alongside designing, Zemmearija is also a recording artist. The same energy that shows up in the graphics and character designs lives in her music — personal, expressive, and straight from her point of view. The brand lets you tap into both sides at once: the sound and the style.
+                Alongside designing,  The founder is a song writer, rapper, and performing artist. The same energy that shows up in the graphics and character designs lives in her music... personal, expressive, and straight from her point of view. The brand lets you tap into both sides at once: the sound and the style.
               </p>
 
               <p className="text-xl md:text-2xl font-bold text-accent">
