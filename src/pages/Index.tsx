@@ -178,12 +178,15 @@ const Index = () => {
                   built on resilience and reinvention.
                 </p>
                 <p className="text-muted-foreground">
-                  We took the phrase <span className="text-accent font-bold">"dope fiend"</span> — 
-                  a label meant to destroy — and turned it into something powerful.
+                  In a world that weaponizes words, we chose to transform one.
                 </p>
                 <p className="text-muted-foreground">
-                  Now it means being <span className="text-foreground font-bold">hooked on greatness</span>. 
-                  On better decisions. On showing up as your best self.
+                  <span className="text-accent font-bold">"Dope fiend"</span> — a phrase that never belonged to us, 
+                  but one we completely redefined.
+                </p>
+                <p className="text-muted-foreground">
+                  We flipped its meaning from destruction to excellence. From addiction to problems, 
+                  to being <span className="text-foreground font-bold">hooked on greatness</span>.
                 </p>
                 <p className="text-2xl md:text-3xl font-black text-foreground">
                   Not addicted to the problem.<br />
