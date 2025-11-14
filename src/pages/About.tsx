@@ -10,7 +10,7 @@ const About = () => {
       <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background z-10" />
         <img src={aboutHero} alt="Fiend 4 Dopeness Brand" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 z-20 flex items-end md:items-center justify-center pb-16 md:pb-0">
+        <div className="absolute inset-0 z-20 flex items-end justify-center pb-8 md:pb-20">
           <div className="text-center px-4 animate-fade-up">
             <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-black tracking-widest text-white mb-6 drop-shadow-2xl" style={{
             textShadow: '0 0 30px rgba(0,0,0,0.8), 0 0 60px rgba(0,0,0,0.6)'
