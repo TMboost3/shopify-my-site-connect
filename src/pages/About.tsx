@@ -90,7 +90,7 @@ const About = () => {
               </div>
 
               <div className="pt-8">
-                <Button size="lg" className="relative bg-accent hover:bg-white hover:text-accent text-white font-heading font-bold px-14 py-7 text-xl hover:scale-105 transition-all duration-500 shadow-[0_0_30px_rgba(255,215,0,0.5)] hover:shadow-[0_0_50px_rgba(255,255,255,0.8)] w-full md:w-auto" asChild>
+                <Button size="lg" className="relative bg-accent hover:bg-white hover:text-accent text-white font-heading font-bold px-14 py-7 text-xl hover:scale-105 transition-all duration-500 w-full md:w-auto" asChild>
                   <Link to="/shop">
                     SHOP THE COLLECTION
                   </Link>
