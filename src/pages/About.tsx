@@ -90,8 +90,11 @@ const About = () => {
               </div>
 
               <div className="pt-8">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-heading font-bold px-12 py-6 text-lg hover:scale-105 transition-all duration-300 shadow-lg shadow-accent/30 w-full md:w-auto" asChild>
-                  <Link to="/shop">SHOP THE COLLECTION</Link>
+                <Button size="lg" className="relative bg-accent hover:bg-accent/90 text-white font-heading font-bold px-14 py-7 text-xl hover:scale-110 transition-all duration-300 shadow-[0_0_30px_rgba(255,215,0,0.5)] hover:shadow-[0_0_50px_rgba(255,215,0,0.8)] w-full md:w-auto animate-pulse border-2 border-white/30 hover:border-white/60 group overflow-hidden" asChild>
+                  <Link to="/shop">
+                    <span className="relative z-10">SHOP THE COLLECTION</span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+                  </Link>
                 </Button>
               </div>
             </div>
