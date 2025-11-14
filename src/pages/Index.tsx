@@ -41,9 +41,10 @@ const Index = () => {
     const loadProducts = async () => {
       try {
         const productsData = await fetchProducts();
-        // Filter out products that are out of stock for featured section
+        // Filter out products that are out of stock or the Digital Girl Sweatsuit
         const inStockProducts = productsData.filter(product => 
-          product.node.variants.edges.some(v => v.node.availableForSale)
+          product.node.variants.edges.some(v => v.node.availableForSale) &&
+          !product.node.title.includes("DIGITAL GIRL SWEATSUIT")
         );
         setProducts(inStockProducts);
       } catch (error) {

@@ -60,6 +60,11 @@ const Shop = () => {
   const filteredAndSortedProducts = useMemo(() => {
     let filtered = [...products];
 
+    // Exclude specific product (Digital Girl Sweatsuit)
+    filtered = filtered.filter(product => 
+      !product.node.title.includes("DIGITAL GIRL SWEATSUIT")
+    );
+
     // Price filter
     filtered = filtered.filter(product => {
       const price = parseFloat(product.node.priceRange.minVariantPrice.amount);
@@ -300,13 +305,13 @@ const Shop = () => {
                       )}
                     </Button>
                   </SheetTrigger>
-                  <SheetContent side="left" className="w-full sm:max-w-md">
-                    <SheetHeader>
+                  <SheetContent side="left" className="w-full sm:max-w-md flex flex-col">
+                    <SheetHeader className="flex-shrink-0">
                       <SheetTitle className="font-heading text-xl font-black tracking-tight">
                         FILTERS
                       </SheetTitle>
                     </SheetHeader>
-                    <div className="mt-6">
+                    <div className="mt-6 overflow-y-auto flex-1 pr-2">
                       <FilterContent />
                     </div>
                   </SheetContent>
