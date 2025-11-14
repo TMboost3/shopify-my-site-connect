@@ -42,10 +42,22 @@ const Index = () => {
       try {
         const productsData = await fetchProducts();
         // Filter out products that are out of stock or the Digital Girl Sweatsuit
-        const inStockProducts = productsData.filter(product => 
+        let inStockProducts = productsData.filter(product => 
           product.node.variants.edges.some(v => v.node.availableForSale) &&
           !product.node.title.includes("DIGITAL GIRL SWEATSUIT")
         );
+        
+        // Prioritize stamped crewneck for featured section
+        const crewneckIndex = inStockProducts.findIndex(p => 
+          p.node.title.toLowerCase().includes("stamped") && 
+          p.node.title.toLowerCase().includes("crewneck")
+        );
+        
+        if (crewneckIndex > 0) {
+          const crewneck = inStockProducts.splice(crewneckIndex, 1)[0];
+          inStockProducts.unshift(crewneck);
+        }
+        
         setProducts(inStockProducts);
       } catch (error) {
         console.error('Error loading products:', error);
