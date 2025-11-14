@@ -167,27 +167,33 @@ const Index = () => {
             <div className="order-2 md:order-1 space-y-8 animate-fade-in">
               <div>
                 <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight">
-                  STATUS IS<br />EVERYTHING
+                  FLIPPING THE<br />NARRATIVE
                 </h2>
                 <div className="h-1 w-24 bg-accent mb-8" />
               </div>
               
               <div className="space-y-6 text-lg md:text-xl leading-relaxed">
                 <p className="text-muted-foreground">
-                  We are the <span className="text-accent font-bold">fiends for dopeness</span>.
+                  A <span className="text-foreground font-bold">Black-owned lifestyle brand</span> born in South Los Angeles, 
+                  built on resilience and reinvention.
                 </p>
                 <p className="text-muted-foreground">
-                  We create high-quality, <span className="text-foreground font-bold">unapologetic</span> designer 
-                  streetwear that resonates with youth street culture.
+                  We took the phrase <span className="text-accent font-bold">"dope fiend"</span> — 
+                  a label meant to destroy — and turned it into something powerful.
                 </p>
-                <p className="text-2xl md:text-3xl font-bold text-foreground">
-                  This isn't just clothing.<br />It's a statement.
+                <p className="text-muted-foreground">
+                  Now it means being <span className="text-foreground font-bold">hooked on greatness</span>. 
+                  On better decisions. On showing up as your best self.
+                </p>
+                <p className="text-2xl md:text-3xl font-black text-foreground">
+                  Not addicted to the problem.<br />
+                  Addicted to the progress.
                 </p>
               </div>
               
               <Link to="/about">
                 <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-heading font-bold text-base px-8 py-6 mt-4 hover:scale-105 transition-transform">
-                  LEARN MORE
+                  READ OUR STORY
                 </Button>
               </Link>
             </div>
