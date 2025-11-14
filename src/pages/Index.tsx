@@ -26,21 +26,14 @@ import community17 from "@/assets/community-17.png";
 import community18 from "@/assets/community-18.png";
 import community19 from "@/assets/community-19.png";
 import community20 from "@/assets/community-20.png";
-const communityImages = [
-  community1, community2, community3, community4, community5,
-  community6, community7, community8, community9, community10,
-  community11, community12, community13, community14, community15,
-  community16, community17, community18, community19, community20
-];
-
+const communityImages = [community1, community2, community3, community4, community5, community6, community7, community8, community9, community10, community11, community12, community13, community14, community15, community16, community17, community18, community19, community20];
 const Index = () => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % communityImages.length);
+      setCurrentImageIndex(prev => (prev + 1) % communityImages.length);
     }, 3000);
     return () => clearInterval(interval);
   }, []);
@@ -64,21 +57,11 @@ const Index = () => {
       <section className="relative min-h-screen flex items-center justify-center pt-32 pb-20 bg-background text-foreground overflow-hidden">
         {/* Community images slideshow */}
         <div className="absolute inset-0 z-0">
-          {communityImages.map((img, idx) => (
-            <div
-              key={idx}
-              className="absolute inset-0 transition-opacity duration-1000"
-              style={{
-                opacity: idx === currentImageIndex ? 0.4 : 0,
-              }}
-            >
-              <img
-                src={img}
-                alt="Community"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+          {communityImages.map((img, idx) => <div key={idx} className="absolute inset-0 transition-opacity duration-1000" style={{
+          opacity: idx === currentImageIndex ? 0.4 : 0
+        }}>
+              <img src={img} alt="Community" className="w-full h-full object-cover" />
+            </div>)}
           <div className="absolute inset-0 bg-background/50" />
         </div>
 
@@ -107,7 +90,7 @@ const Index = () => {
           }} />
             
             <p className="text-lg md:text-xl font-light leading-relaxed mb-12 text-muted-foreground max-w-3xl mx-auto">
-              Streetwear and music by Los Angeles artist  — built around one iconic character and a lot of emotion.
+              Dope by Design, Not Default.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-heading font-bold text-base md:text-lg px-12 py-6 shadow-[0_0_30px_hsl(var(--accent)/0.3)] hover:shadow-[0_0_50px_hsl(var(--accent)/0.5)] transition-all duration-300 hover:scale-105" asChild>
