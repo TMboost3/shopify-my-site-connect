@@ -23,12 +23,12 @@ import community20 from "@/assets/community-20.png";
 const Community = () => {
   const communityImages = [
     { src: community6, alt: "Community member 6" },
+    { src: community1, alt: "Community member 1" },
     { src: community7, alt: "Community member 7" },
     { src: community20, alt: "Community member 20" },
     { src: community8, alt: "Community member 8" },
     { src: community9, alt: "Community member 9" },
     { src: community10, alt: "Community member 10" },
-    { src: community1, alt: "Community member 1" },
     { src: community2, alt: "Community member 2" },
     { src: community3, alt: "Community member 3" },
     { src: community4, alt: "Community member 4" },
