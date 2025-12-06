@@ -80,7 +80,7 @@ const Community = () => {
 
         {/* Gallery Grid */}
         <section className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
             {communityImages.map((image, index) => (
               <div
                 key={index}
