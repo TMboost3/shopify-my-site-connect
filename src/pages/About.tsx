@@ -15,8 +15,7 @@ const About = () => {
             <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-black tracking-widest text-white mb-6 drop-shadow-2xl" style={{
             textShadow: '0 0 40px rgba(0,0,0,0.95), 0 0 80px rgba(0,0,0,0.85), 2px 2px 4px rgba(0,0,0,1)'
           }}>
-              FIEND 4 DOPENESS
-            </h1>
+          </h1>
             <p className="text-xl md:text-2xl text-white font-medium max-w-2xl mx-auto" style={{
             textShadow: '0 0 30px rgba(0,0,0,0.9), 2px 2px 4px rgba(0,0,0,1)'
           }}>
