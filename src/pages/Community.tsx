@@ -24,6 +24,7 @@ const Community = () => {
   const communityImages = [
     { src: community6, alt: "Community member 6" },
     { src: community5, alt: "Community member 5" },
+    { src: community15, alt: "Community member 15" },
     { src: community2, alt: "Community member 2" },
     { src: community20, alt: "Community member 20" },
     { src: community7, alt: "Community member 7" },
@@ -36,7 +37,6 @@ const Community = () => {
     { src: community12, alt: "Community member 12" },
     { src: community13, alt: "Community member 13" },
     { src: community14, alt: "Community member 14" },
-    { src: community15, alt: "Community member 15" },
     { src: community16, alt: "Community member 16" },
     { src: community17, alt: "Community member 17" },
     { src: community18, alt: "Community member 18" },
