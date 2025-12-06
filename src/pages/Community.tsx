@@ -29,6 +29,12 @@ import community27 from "@/assets/community-27.png";
 
 const Community = () => {
   const communityImages = [
+    { src: community27, alt: "Community member 27" },
+    { src: community21, alt: "Community member 21" },
+    { src: community22, alt: "Community member 22" },
+    { src: community23, alt: "Community member 23" },
+    { src: community24, alt: "Community member 24" },
+    { src: community4, alt: "Community member 4" },
     { src: community26, alt: "Community member 26" },
     { src: community25, alt: "Community member 25" },
     { src: community3, alt: "Community member 3" },
@@ -37,15 +43,9 @@ const Community = () => {
     { src: community15, alt: "Community member 15" },
     { src: community20, alt: "Community member 20" },
     { src: community7, alt: "Community member 7" },
-    { src: community27, alt: "Community member 27" },
-    { src: community21, alt: "Community member 21" },
-    { src: community22, alt: "Community member 22" },
-    { src: community23, alt: "Community member 23" },
-    { src: community24, alt: "Community member 24" },
     { src: community8, alt: "Community member 8" },
     { src: community9, alt: "Community member 9" },
     { src: community10, alt: "Community member 10" },
-    { src: community4, alt: "Community member 4" },
     { src: community11, alt: "Community member 11" },
     { src: community12, alt: "Community member 12" },
     { src: community13, alt: "Community member 13" },
