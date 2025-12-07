@@ -46,7 +46,6 @@ const Community = () => {
     { src: community28, alt: "Community member 28" },
     { src: community29, alt: "Community member 29" },
     { src: community30, alt: "Community member 30" },
-    { src: community31, alt: "Community member 31" },
     { src: community32, alt: "Community member 32" },
     { src: community27, alt: "Community member 27" },
     { src: community21, alt: "Community member 21" },
