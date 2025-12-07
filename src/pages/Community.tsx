@@ -42,7 +42,7 @@ import community41 from "@/assets/community-41.png";
 
 const Community = () => {
   const communityImages = [
-    { src: community38, alt: "Community member 38" },
+    { src: community38, alt: "Community member 38", position: "object-bottom" },
     { src: community39, alt: "Community member 39" },
     { src: community40, alt: "Community member 40" },
     { src: community41, alt: "Community member 41" },
@@ -114,7 +114,7 @@ const Community = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-110"
+                  className={`w-full h-full object-cover ${image.position || 'object-top'} transition-transform duration-300 group-hover:scale-110`}
                   loading="lazy"
                 />
               </div>
