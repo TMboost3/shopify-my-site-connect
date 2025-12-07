@@ -1,7 +1,6 @@
 import { Header } from "@/components/Header";
 import community1 from "@/assets/community-1.png";
 import community2 from "@/assets/community-2.png";
-import community3 from "@/assets/community-3.png";
 import community4 from "@/assets/community-4.png";
 import community5 from "@/assets/community-5.png";
 import community6 from "@/assets/community-6.png";
@@ -31,9 +30,19 @@ import community29 from "@/assets/community-29.png";
 import community30 from "@/assets/community-30.png";
 import community31 from "@/assets/community-31.png";
 import community32 from "@/assets/community-32.png";
+import community33 from "@/assets/community-33.png";
+import community34 from "@/assets/community-34.png";
+import community35 from "@/assets/community-35.png";
+import community36 from "@/assets/community-36.png";
+import community37 from "@/assets/community-37.png";
 
 const Community = () => {
   const communityImages = [
+    { src: community33, alt: "Community member 33" },
+    { src: community34, alt: "Community member 34" },
+    { src: community35, alt: "Community member 35" },
+    { src: community36, alt: "Community member 36" },
+    { src: community37, alt: "Community member 37" },
     { src: community28, alt: "Community member 28" },
     { src: community29, alt: "Community member 29" },
     { src: community30, alt: "Community member 30" },
@@ -47,7 +56,6 @@ const Community = () => {
     { src: community4, alt: "Community member 4" },
     { src: community26, alt: "Community member 26" },
     { src: community25, alt: "Community member 25" },
-    { src: community3, alt: "Community member 3" },
     { src: community6, alt: "Community member 6" },
     { src: community5, alt: "Community member 5" },
     { src: community15, alt: "Community member 15" },
