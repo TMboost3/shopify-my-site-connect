@@ -42,7 +42,7 @@ import community41 from "@/assets/community-41.png";
 
 const Community = () => {
   const communityImages = [
-    { src: community38, alt: "Community member 38", position: "object-center" },
+    { src: community38, alt: "Community member 38", position: "object-[60%]" },
     { src: community39, alt: "Community member 39" },
     { src: community40, alt: "Community member 40" },
     { src: community41, alt: "Community member 41" },
