@@ -35,9 +35,17 @@ import community34 from "@/assets/community-34.png";
 import community35 from "@/assets/community-35.png";
 import community36 from "@/assets/community-36.png";
 import community37 from "@/assets/community-37.png";
+import community38 from "@/assets/community-38.png";
+import community39 from "@/assets/community-39.png";
+import community40 from "@/assets/community-40.png";
+import community41 from "@/assets/community-41.png";
 
 const Community = () => {
   const communityImages = [
+    { src: community38, alt: "Community member 38" },
+    { src: community39, alt: "Community member 39" },
+    { src: community40, alt: "Community member 40" },
+    { src: community41, alt: "Community member 41" },
     { src: community33, alt: "Community member 33" },
     { src: community34, alt: "Community member 34" },
     { src: community35, alt: "Community member 35" },
