@@ -114,7 +114,7 @@ const Community = () => {
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className={`w-full h-full object-cover ${image.position || 'object-top'} transition-transform duration-300 group-hover:scale-110`}
+                  className={`w-full h-full object-cover ${image.position || 'object-[center_20%]'} transition-transform duration-300 group-hover:scale-110`}
                   loading="lazy"
                 />
               </div>
