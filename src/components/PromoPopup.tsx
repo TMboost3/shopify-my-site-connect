@@ -35,39 +35,43 @@ export const PromoPopup = () => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-md p-0 overflow-hidden border-0">
-        <div 
-          className="relative bg-cover bg-center bg-no-repeat min-h-[500px] flex flex-col justify-end p-6"
-          style={{ backgroundImage: `url(${promoBg})` }}
-        >
+      <DialogContent className="sm:max-w-sm p-0 overflow-hidden border-0 bg-transparent">
+        <div className="relative">
+          <img 
+            src={promoBg} 
+            alt="Get 10% off your first order" 
+            className="w-full h-auto"
+          />
           <button
             onClick={handleClose}
-            className="absolute right-4 top-4 rounded-full bg-black/50 p-1.5 opacity-90 transition-opacity hover:opacity-100 focus:outline-none"
+            className="absolute right-3 top-3 rounded-full bg-black/50 p-1.5 opacity-90 transition-opacity hover:opacity-100 focus:outline-none"
           >
             <X className="h-5 w-5 text-white" />
             <span className="sr-only">Close</span>
           </button>
           
-          <form onSubmit={handleSubmit} className="space-y-3 mt-auto">
-            <Input
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full bg-white/90 border-0 text-black placeholder:text-gray-500"
-            />
-            <Button type="submit" className="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold">
-              Claim My 10% Off
-            </Button>
-            <button
-              type="button"
-              onClick={handleClose}
-              className="w-full text-sm text-white/80 hover:text-white transition-colors"
-            >
-              No thanks, I'll pay full price
-            </button>
-          </form>
+          <div className="absolute bottom-0 left-0 right-0 p-4">
+            <form onSubmit={handleSubmit} className="space-y-2">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full bg-white/95 border-0 text-black placeholder:text-gray-500"
+              />
+              <Button type="submit" className="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold">
+                Claim My 10% Off
+              </Button>
+              <button
+                type="button"
+                onClick={handleClose}
+                className="w-full text-xs text-white/80 hover:text-white transition-colors"
+              >
+                No thanks, I'll pay full price
+              </button>
+            </form>
+          </div>
         </div>
       </DialogContent>
     </Dialog>
