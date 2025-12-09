@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { toast } from "sonner";
+import promoBg from "@/assets/promo-bg.png";
 
 export const PromoPopup = () => {
   const [open, setOpen] = useState(false);
@@ -34,40 +35,40 @@ export const PromoPopup = () => {
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      <DialogContent className="sm:max-w-md">
-        <button
-          onClick={handleClose}
-          className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none"
+      <DialogContent className="sm:max-w-md p-0 overflow-hidden border-0">
+        <div 
+          className="relative bg-cover bg-center bg-no-repeat min-h-[500px] flex flex-col justify-end p-6"
+          style={{ backgroundImage: `url(${promoBg})` }}
         >
-          <X className="h-4 w-4" />
-          <span className="sr-only">Close</span>
-        </button>
-        <DialogHeader>
-          <DialogTitle className="text-2xl text-center">Get 10% Off Your First Order!</DialogTitle>
-          <DialogDescription className="text-center pt-2">
-            Subscribe to our newsletter and receive an exclusive discount code
-          </DialogDescription>
-        </DialogHeader>
-        <form onSubmit={handleSubmit} className="space-y-4 pt-4">
-          <Input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="w-full"
-          />
-          <Button type="submit" className="w-full">
-            Claim My 10% Off
-          </Button>
           <button
-            type="button"
             onClick={handleClose}
-            className="w-full text-sm text-muted-foreground hover:text-foreground transition-colors"
+            className="absolute right-4 top-4 rounded-full bg-black/50 p-1.5 opacity-90 transition-opacity hover:opacity-100 focus:outline-none"
           >
-            No thanks, I'll pay full price
+            <X className="h-5 w-5 text-white" />
+            <span className="sr-only">Close</span>
           </button>
-        </form>
+          
+          <form onSubmit={handleSubmit} className="space-y-3 mt-auto">
+            <Input
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="w-full bg-white/90 border-0 text-black placeholder:text-gray-500"
+            />
+            <Button type="submit" className="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold">
+              Claim My 10% Off
+            </Button>
+            <button
+              type="button"
+              onClick={handleClose}
+              className="w-full text-sm text-white/80 hover:text-white transition-colors"
+            >
+              No thanks, I'll pay full price
+            </button>
+          </form>
+        </div>
       </DialogContent>
     </Dialog>
   );
