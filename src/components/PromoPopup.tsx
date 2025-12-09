@@ -1,14 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { toast } from "sonner";
 import promoBg from "@/assets/promo-bg.png";
+import promoAudio from "@/assets/promo-audio.mp3";
 
 export const PromoPopup = () => {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     const hasSeenPromo = localStorage.getItem("hasSeenPromo");
@@ -19,6 +21,22 @@ export const PromoPopup = () => {
       return () => clearTimeout(timer);
     }
   }, []);
+
+  useEffect(() => {
+    if (open) {
+      audioRef.current = new Audio(promoAudio);
+      audioRef.current.play().catch(console.error);
+    } else if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current = null;
+    }
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, [open]);
 
   const handleClose = () => {
     setOpen(false);
