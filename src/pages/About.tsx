@@ -7,20 +7,44 @@ const About = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[60vh] md:h-[70vh] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-background z-10" />
-        <img src={aboutHero} alt="Fiend 4 Dopeness Brand" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 z-20 flex items-end justify-center pb-8 md:pb-20">
-          <div className="text-center px-4 animate-fade-up">
-            <h1 className="font-heading text-6xl md:text-8xl lg:text-9xl font-black tracking-widest text-white mb-6 drop-shadow-2xl" style={{
-            textShadow: '0 0 40px rgba(0,0,0,0.95), 0 0 80px rgba(0,0,0,0.85), 2px 2px 4px rgba(0,0,0,1)'
-          }}>
+      <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-muted/50 to-background">
+        <div className="container mx-auto max-w-6xl">
+          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-center mb-12 md:mb-16 animate-fade-up">
+            ABOUT
           </h1>
-            <p className="text-xl md:text-2xl text-white font-medium max-w-2xl mx-auto" style={{
-            textShadow: '0 0 30px rgba(0,0,0,0.9), 2px 2px 4px rgba(0,0,0,1)'
-          }}>
-              Not addicted to the problem. Addicted to the progress.
-            </p>
+          
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            {/* 3D Fiend Mascot */}
+            <div className="order-2 md:order-1 flex justify-center animate-fade-up">
+              <img 
+                src={aboutHero} 
+                alt="Fiend 4 Dopeness 3D Mascot" 
+                className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
+              />
+            </div>
+            
+            {/* Brand Text */}
+            <div className="order-1 md:order-2 space-y-6 text-base md:text-lg leading-relaxed animate-fade-up delay-100">
+              <p>
+                Fiend 4 Dopeness was created to redefine a word many of us grew up hearing. In the era it came from, "dope fiend" carried one meaning… This forward-thinking brand turns it into something powerful.
+              </p>
+              
+              <p>
+                The foundation of Fiend 4 Dopeness is greatness. It began with the belief that where you start does not limit who you can become. That vision shaped the brand into a statement of elevation, confidence, and personal evolution.
+              </p>
+              
+              <p>
+                Fiend 4 Dopeness speaks to those who want more. It resonates with anyone who rose beyond expectation and grew into something extraordinary. It's for people who feel a pull toward something greater and commit to becoming the most elevated version of themselves, regardless of their beginning.
+              </p>
+              
+              <p className="font-heading text-xl md:text-2xl font-bold text-foreground">
+                It's not about the origin. It's about the outcome.
+              </p>
+              
+              <p className="font-heading text-xl md:text-2xl font-black text-accent">
+                Dopeness isn't an image. It's a standard.
+              </p>
+            </div>
           </div>
         </div>
       </section>
