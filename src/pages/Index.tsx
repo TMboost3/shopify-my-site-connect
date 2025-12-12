@@ -162,7 +162,7 @@ const Index = () => {
               Fiend 4 Dopeness
             </h2>
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-              Fiend 4 Dopeness was born in Los Angeles with one intention: to flip a word that never told the whole truth. What once labeled people as a limitation now stands for a standard of greatness that's unmistakable and undeniable.
+              Fiend 4 Dopeness began in Los Angeles with one intention: to give new direction to a word that never told the whole truth. What was once spoken as a limitation now reflects a standard of greatness that is unmistakable and undeniable.
             </p>
             <Link to="/about" className="inline-flex items-center text-accent hover:text-accent/80 font-heading font-bold text-lg transition-colors">
               Read our story →
