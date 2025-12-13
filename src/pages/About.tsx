@@ -14,38 +14,36 @@ const About = () => {
             ABOUT
           </h1>
           
-          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-            {/* 3D Fiend Mascot */}
-            <div className="order-2 md:order-1 flex justify-center animate-fade-up">
-              <img 
-                src={aboutHero} 
-                alt="Fiend 4 Dopeness 3D Mascot" 
-                className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
-              />
-            </div>
+          {/* 3D Fiend Mascot */}
+          <div className="flex justify-center mb-12 animate-fade-up">
+            <img 
+              src={aboutHero} 
+              alt="Fiend 4 Dopeness 3D Mascot" 
+              className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
+            />
+          </div>
+          
+          {/* Brand Text */}
+          <div className="max-w-3xl mx-auto space-y-6 text-base md:text-lg leading-relaxed text-center animate-fade-up delay-100">
+            <p>
+              Fiend 4 Dopeness was created to redefine a word many of us grew up hearing. In the era it came from, "dope fiend" carried one meaning… This forward-thinking brand turns it into something powerful.
+            </p>
             
-            {/* Brand Text */}
-            <div className="order-1 md:order-2 space-y-6 text-base md:text-lg leading-relaxed animate-fade-up delay-100">
-              <p>
-                Fiend 4 Dopeness was created to redefine a word many of us grew up hearing. In the era it came from, "dope fiend" carried one meaning… This forward-thinking brand turns it into something powerful.
-              </p>
-              
-              <p>
-                The foundation of Fiend 4 Dopeness is greatness. It began with the belief that where you start does not limit who you can become. That vision shaped the brand into a statement of elevation, confidence, and personal evolution.
-              </p>
-              
-              <p>
-                Fiend 4 Dopeness speaks to those who want more. It resonates with anyone who rose beyond expectation and grew into something extraordinary. It's for people who feel a pull toward something greater and commit to becoming the most elevated version of themselves, regardless of their beginning.
-              </p>
-              
-              <p className="font-heading text-xl md:text-2xl font-bold text-foreground">
-                It's not about the origin. It's about the outcome.
-              </p>
-              
-              <p className="font-heading text-xl md:text-2xl font-black text-accent">
-                Dopeness isn't an image. It's a standard.
-              </p>
-            </div>
+            <p>
+              The foundation of Fiend 4 Dopeness is greatness. It began with the belief that where you start does not limit who you can become. That vision shaped the brand into a statement of elevation, confidence, and personal evolution.
+            </p>
+            
+            <p>
+              Fiend 4 Dopeness speaks to those who want more. It resonates with anyone who rose beyond expectation and grew into something extraordinary. It's for people who feel a pull toward something greater and commit to becoming the most elevated version of themselves, regardless of their beginning.
+            </p>
+            
+            <p className="font-heading text-xl md:text-2xl font-bold text-foreground">
+              It's not about the origin. It's about the outcome.
+            </p>
+            
+            <p className="font-heading text-xl md:text-2xl font-black text-accent">
+              Dopeness isn't an image. It's a standard.
+            </p>
           </div>
         </div>
       </section>
