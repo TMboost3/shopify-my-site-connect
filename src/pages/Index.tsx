@@ -157,17 +157,50 @@ const Index = () => {
       <section className="py-32 bg-muted text-foreground relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-muted via-accent/5 to-muted" />
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-3xl mx-auto animate-fade-in">
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-black tracking-tight mb-6">
-              Fiend 4 Dopeness
-            </h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">Fiend 4 Dopeness began with one intention: to give new direction to a word that never told the whole truth. Born in Los Angeles during the height of the 1980s crack epidemic, the creator brings a perspective shaped by a word rooted in destruction, and transforms it into purpose. What was once spoken as a limitation now reflects a standard of greatness that is unmistakable and undeniable.
-          </p>
-            <Link to="/about" className="inline-flex items-center text-accent hover:text-accent/80 font-heading font-bold text-lg transition-colors">
-              Read our story →
-            </Link>
-          </div>
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="order-2 md:order-1 space-y-8 animate-fade-in">
+              <div>
+                <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight">
+                  FLIPPING THE<br />NARRATIVE
+                </h2>
+                <div className="h-1 w-24 bg-accent mb-8" />
+              </div>
+              
+              <div className="space-y-6 text-lg md:text-xl leading-relaxed">
+                <p className="text-muted-foreground">
+                  A <span className="text-foreground font-bold">Black-owned lifestyle brand</span> born in South Los Angeles, 
+                  built on resilience and reinvention.
+                </p>
+                <p className="text-muted-foreground">
+                  In a world that weaponizes words, we chose to transform one.
+                </p>
+                <p className="text-muted-foreground">
+                  <span className="text-accent font-bold">"Dope fiend"</span> — a phrase that never belonged to us, 
+                  but one we completely redefined.
+                </p>
+                <p className="text-muted-foreground">
+                  We flipped its meaning from destruction to excellence. From addiction to problems, 
+                  to being <span className="text-foreground font-bold">hooked on greatness</span>.
+                </p>
+                <p className="text-2xl md:text-3xl font-black text-foreground">
+                  Not addicted to the problem.<br />
+                  Addicted to the progress.
+                </p>
+              </div>
+              
+              <Link to="/about">
+                <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-heading font-bold text-base px-8 py-6 mt-4 hover:scale-105 transition-transform">
+                  READ OUR STORY
+                </Button>
+              </Link>
+            </div>
 
+            {products.length > 0 && products[0].node.images.edges[0] && <div className="order-1 md:order-2 relative h-[400px] md:h-[600px] group">
+                <div className="absolute inset-0 bg-accent/10 group-hover:bg-accent/20 transition-colors duration-300" />
+                <img src={products[0].node.images.edges[0].node.url} alt={products[0].node.images.edges[0].node.altText || "FIEND 4 DOPENESS"} className="w-full h-full object-cover transition-all duration-500" />
+                <div className="absolute inset-0 border-4 border-border group-hover:border-accent/50 transition-colors duration-300" />
+              </div>}
+          </div>
         </div>
       </section>
 

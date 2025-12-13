@@ -16,22 +16,6 @@ export const Header = () => {
     { name: "ABOUT & MUSIC", path: "/about" },
   ];
 
-  const collections = [
-    { name: "Crewnecks", path: "/shop?collection=crewnecks" },
-    { name: "Hats", path: "/shop?collection=hats" },
-    { name: "Hoodie", path: "/shop?collection=hoodie" },
-    { name: "Jerseys", path: "/shop?collection=jerseys" },
-    { name: "Polo Shirts", path: "/shop?collection=polo-shirts" },
-    { name: "Crop Tops", path: "/shop?collection=crop-tops" },
-    { name: "T-Shirts", path: "/shop?collection=t-shirts" },
-    { name: "Outfits", path: "/shop?collection=outfits" },
-    { name: "Sweatsuits", path: "/shop?collection=sweatsuits" },
-    { name: "Sweatpants", path: "/shop?collection=sweatpants" },
-    { name: "Muscle Shirts (Tank Tops)", path: "/shop?collection=muscle-shirts" },
-    { name: "Medical Scrubs", path: "/shop?collection=medical-scrubs" },
-    { name: "About Us", path: "/about" },
-  ];
-
   const isActive = (path: string) => location.pathname === path;
 
   return (
@@ -82,7 +66,7 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border max-h-[70vh] overflow-y-auto">
+          <nav className="md:hidden py-4 border-t border-border">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -97,21 +81,6 @@ export const Header = () => {
                 {link.name}
               </Link>
             ))}
-            
-            {/* Collections */}
-            <div className="mt-4 pt-4 border-t border-border">
-              <p className="text-sm text-muted-foreground font-heading font-bold mb-2">ALL COLLECTIONS</p>
-              {collections.map((collection) => (
-                <Link
-                  key={collection.path}
-                  to={collection.path}
-                  className="block py-2 text-sm text-foreground hover:text-accent transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {collection.name}
-                </Link>
-              ))}
-            </div>
           </nav>
         )}
       </div>
