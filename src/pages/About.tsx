@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import aboutHero from "@/assets/about-hero.png";
 
@@ -40,6 +41,42 @@ const About = () => {
             <p className="font-heading text-xl md:text-2xl font-black text-accent">
               Dopeness isn't an image. It's a standard.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Music Section */}
+      <section className="py-20 md:py-32 px-4 bg-gradient-to-b from-background via-muted/30 to-background">
+        <div className="container mx-auto max-w-6xl">
+          <div className="bg-black text-white p-8 md:p-16 rounded-3xl shadow-2xl">
+            <div className="max-w-3xl mx-auto space-y-8 text-center">
+              <h2 className="font-heading text-4xl md:text-5xl font-black tracking-tight">
+                THE SOUND
+              </h2>
+              
+              <div className="h-1 w-24 bg-accent mx-auto" />
+              
+              <p className="text-lg md:text-xl leading-relaxed text-gray-300">
+                Alongside designing, the founder is a songwriter, rapper, and performing artist. The same energy that shows up in the graphics and character designs lives in her music... personal, expressive, and straight from her point of view. The brand lets you tap into both sides at once: the sound and the style.
+              </p>
+
+              <p className="text-xl md:text-2xl font-bold text-accent">
+                Tap in below to listen and support.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center">
+                <Button size="lg" className="bg-accent hover:bg-accent/90 text-white font-heading font-bold px-10 py-6 text-lg hover:scale-105 transition-all duration-300 shadow-lg" asChild>
+                  <a href="https://linktr.ee/zmearya" target="_blank" rel="noopener noreferrer">
+                    Stream Music
+                  </a>
+                </Button>
+                <Button size="lg" className="bg-white hover:bg-white/90 text-black font-heading font-bold px-12 py-6 text-lg hover:scale-110 transition-all duration-300 shadow-[0_0_30px_rgba(255,255,255,0.6)] hover:shadow-[0_0_40px_rgba(255,255,255,0.9)] border-2 border-white/50" asChild>
+                  <a href="https://geo.music.apple.com/us/album/_/1804323440?app=itunes&at=1000lHKX&ct=linktree_http&i=1804323449&itscg=30200&itsct=lt_m&ls=1&mt=1" target="_blank" rel="noopener noreferrer">
+                    Buy Digital Music
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
