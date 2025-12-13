@@ -10,16 +10,12 @@ const About = () => {
       {/* Hero Section */}
       <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-muted/50 to-background">
         <div className="container mx-auto max-w-6xl">
-          <h1 className="font-heading text-5xl md:text-7xl lg:text-8xl font-black tracking-tight text-center mb-12 md:mb-16 animate-fade-up">
-            ABOUT
-          </h1>
-          
-          {/* 3D Fiend Mascot */}
+          {/* 3D Fiend Mascot - Full Width Hero */}
           <div className="flex justify-center mb-12 animate-fade-up">
             <img 
               src={aboutHero} 
               alt="Fiend 4 Dopeness 3D Mascot" 
-              className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
+              className="w-full max-w-4xl h-auto object-contain"
             />
           </div>
           
