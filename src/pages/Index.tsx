@@ -161,9 +161,8 @@ const Index = () => {
             <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-black tracking-tight mb-6">
               Fiend 4 Dopeness
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
-              Fiend 4 Dopeness began in Los Angeles with one intention: to give new direction to a word that never told the whole truth. What was once spoken as a limitation now reflects a standard of greatness that is unmistakable and undeniable.
-            </p>
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">Fiend 4 Dopeness began with one intention: to give new direction to a word that never told the whole truth. Born in Los Angeles during the height of the 1980s crack epidemic, the creator brings a perspective shaped by a word rooted in destruction, and transforms it into purpose. What was once spoken as a limitation now reflects a standard of greatness that is unmistakable and undeniable.
+          </p>
             <Link to="/about" className="inline-flex items-center text-accent hover:text-accent/80 font-heading font-bold text-lg transition-colors">
               Read our story →
             </Link>
