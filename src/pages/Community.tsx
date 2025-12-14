@@ -42,33 +42,33 @@ import community41 from "@/assets/community-41.png";
 
 const Community = () => {
   const communityImages = [
-    { src: community38, alt: "Community member 38", position: "object-[60%]" },
+    { src: community38, alt: "Community member 38", position: "object-[60%]" }, // 1 - keep
+    { src: community32, alt: "Community member 32" }, // was 13 - first row
+    { src: community24, alt: "Community member 24" }, // was 18 - higher
+    { src: community27, alt: "Community member 27" }, // was 14 - higher
+    { src: community26, alt: "Community member 26" }, // was 20 - higher
+    { src: community34, alt: "Community member 34" }, // 6 - keep
+    { src: community35, alt: "Community member 35" }, // 7 - keep
+    { src: community5, alt: "Community member 5" }, // was 23 - higher
+    { src: community25, alt: "Community member 25" }, // was 21 - higher
+    { src: community6, alt: "Community member 6" }, // was 22 - higher
+    { src: community8, alt: "Community member 8" }, // was 27 - higher
+    { src: community4, alt: "Community member 4" }, // was 19 - higher
     { src: community39, alt: "Community member 39" },
     { src: community40, alt: "Community member 40" },
     { src: community41, alt: "Community member 41" },
     { src: community33, alt: "Community member 33" },
-    { src: community34, alt: "Community member 34" },
-    { src: community35, alt: "Community member 35" },
     { src: community36, alt: "Community member 36" },
     { src: community37, alt: "Community member 37" },
     { src: community28, alt: "Community member 28" },
     { src: community29, alt: "Community member 29" },
     { src: community30, alt: "Community member 30" },
-    { src: community32, alt: "Community member 32" },
-    { src: community27, alt: "Community member 27" },
     { src: community21, alt: "Community member 21" },
     { src: community22, alt: "Community member 22" },
     { src: community23, alt: "Community member 23" },
-    { src: community24, alt: "Community member 24" },
-    { src: community4, alt: "Community member 4" },
-    { src: community26, alt: "Community member 26" },
-    { src: community25, alt: "Community member 25" },
-    { src: community6, alt: "Community member 6" },
-    { src: community5, alt: "Community member 5" },
     { src: community15, alt: "Community member 15" },
     { src: community20, alt: "Community member 20" },
     { src: community7, alt: "Community member 7" },
-    { src: community8, alt: "Community member 8" },
     { src: community9, alt: "Community member 9" },
     { src: community10, alt: "Community member 10" },
     { src: community11, alt: "Community member 11" },
