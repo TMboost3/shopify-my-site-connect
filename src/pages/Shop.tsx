@@ -46,15 +46,47 @@ const Shop = () => {
     loadProducts();
   }, []);
 
-  // Extract unique categories
+  // Define category keywords for matching
+  const categoryKeywords: Record<string, string[]> = {
+    'Crewnecks': ['crewneck', 'crew neck'],
+    'Hats': ['hat', 'cap', 'beanie', 'bucket'],
+    'Hoodies': ['hoodie', 'hoody'],
+    'Jerseys': ['jersey'],
+    'Polo Shirts': ['polo'],
+    'Crop Tops': ['crop'],
+    'T-Shirts': ['tee', 't-shirt', 'tshirt', 'shirt'],
+    'Sweatsuits': ['sweatsuit', 'outfit', 'set'],
+    'Sweatpants': ['sweatpants'],
+    'Joggers': ['jogger', 'joggers'],
+    'Tank Tops': ['tank', 'muscle'],
+    'Medical Scrubs': ['scrub'],
+  };
+
+  // Get category for a product based on title
+  const getProductCategory = (title: string): string | null => {
+    const lowerTitle = title.toLowerCase();
+    for (const [category, keywords] of Object.entries(categoryKeywords)) {
+      if (keywords.some(kw => lowerTitle.includes(kw))) {
+        return category;
+      }
+    }
+    return null;
+  };
+
+  // Extract unique categories from products
   const availableCategories = useMemo(() => {
     const categories = new Set<string>();
     products.forEach(product => {
-      if (product.node.productType) {
-        categories.add(product.node.productType);
+      const category = getProductCategory(product.node.title);
+      if (category) {
+        categories.add(category);
       }
     });
-    return Array.from(categories).sort();
+    // Sort by the defined order
+    const categoryOrder = Object.keys(categoryKeywords);
+    return Array.from(categories).sort((a, b) => 
+      categoryOrder.indexOf(a) - categoryOrder.indexOf(b)
+    );
   }, [products]);
 
   // Extract unique brands
@@ -83,11 +115,12 @@ const Shop = () => {
       return price >= priceRange[0] && price <= priceRange[1];
     });
 
-    // Category filter
+    // Category filter - match by title keywords
     if (selectedCategories.length > 0) {
-      filtered = filtered.filter(product =>
-        selectedCategories.includes(product.node.productType)
-      );
+      filtered = filtered.filter(product => {
+        const productCategory = getProductCategory(product.node.title);
+        return productCategory && selectedCategories.includes(productCategory);
+      });
     }
 
     // Brand filter
