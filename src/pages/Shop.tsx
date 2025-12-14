@@ -159,13 +159,24 @@ const Shop = () => {
         break;
       default:
         // featured - pin specific products first, then crop tops/hoodies, then rest
+        // Only prioritize in-stock items
         const pinnedProducts: ShopifyProduct[] = [];
         const cropTopHoodies: ShopifyProduct[] = [];
         const otherProducts: ShopifyProduct[] = [];
+        const outOfStockProducts: ShopifyProduct[] = [];
+        
+        const isInStock = (product: ShopifyProduct) => 
+          product.node.variants.edges.some(v => v.node.availableForSale);
         
         pinnedProductTitles.forEach(title => {
           const found = filtered.find(p => p.node.title.toUpperCase() === title.toUpperCase());
-          if (found) pinnedProducts.push(found);
+          if (found) {
+            if (isInStock(found)) {
+              pinnedProducts.push(found);
+            } else {
+              outOfStockProducts.push(found);
+            }
+          }
         });
         
         filtered.forEach(product => {
@@ -173,6 +184,11 @@ const Shop = () => {
             title => product.node.title.toUpperCase() === title.toUpperCase()
           );
           if (isPinned) return;
+          
+          if (!isInStock(product)) {
+            outOfStockProducts.push(product);
+            return;
+          }
           
           const lowerTitle = product.node.title.toLowerCase();
           const isCropTopOrHoodie = lowerTitle.includes('crop') || lowerTitle.includes('hoodie') || lowerTitle.includes('hoody');
@@ -184,7 +200,7 @@ const Shop = () => {
           }
         });
         
-        filtered = [...pinnedProducts, ...cropTopHoodies, ...otherProducts];
+        filtered = [...pinnedProducts, ...cropTopHoodies, ...otherProducts, ...outOfStockProducts];
         break;
     }
 
