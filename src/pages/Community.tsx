@@ -1,4 +1,7 @@
+import { useState } from "react";
 import { Header } from "@/components/Header";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import community1 from "@/assets/community-1.png";
 import community2 from "@/assets/community-2.png";
 import community4 from "@/assets/community-4.png";
@@ -41,19 +44,21 @@ import community40 from "@/assets/community-40.png";
 import community41 from "@/assets/community-41.png";
 
 const Community = () => {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
   const communityImages = [
-    { src: community38, alt: "Community member 38", position: "object-[60%]" }, // 1 - keep
-    { src: community25, alt: "Community member 25" }, // swapped from 9
+    { src: community38, alt: "Community member 38", position: "object-[60%]" },
+    { src: community25, alt: "Community member 25" },
     { src: community24, alt: "Community member 24" },
     { src: community27, alt: "Community member 27" },
     { src: community26, alt: "Community member 26" },
     { src: community34, alt: "Community member 34" },
     { src: community35, alt: "Community member 35" },
     { src: community5, alt: "Community member 5" },
-    { src: community32, alt: "Community member 32" }, // swapped from 2
-    { src: community6, alt: "Community member 6" }, // was 22 - higher
-    { src: community8, alt: "Community member 8" }, // was 27 - higher
-    { src: community4, alt: "Community member 4" }, // was 19 - higher
+    { src: community32, alt: "Community member 32" },
+    { src: community6, alt: "Community member 6" },
+    { src: community8, alt: "Community member 8" },
+    { src: community4, alt: "Community member 4" },
     { src: community39, alt: "Community member 39" },
     { src: community40, alt: "Community member 40" },
     { src: community41, alt: "Community member 41" },
@@ -83,6 +88,18 @@ const Community = () => {
     { src: community1, alt: "Community member 1" },
   ];
 
+  const handlePrev = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex(selectedIndex === 0 ? communityImages.length - 1 : selectedIndex - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (selectedIndex !== null) {
+      setSelectedIndex(selectedIndex === communityImages.length - 1 ? 0 : selectedIndex + 1);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -110,6 +127,7 @@ const Community = () => {
               <div
                 key={index}
                 className="aspect-square overflow-hidden rounded-lg bg-muted group cursor-pointer relative"
+                onClick={() => setSelectedIndex(index)}
               >
                 <div className="absolute top-1 left-1 z-10 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded">
                   {index + 1}
@@ -140,6 +158,48 @@ const Community = () => {
           </a>
         </section>
       </main>
+
+      {/* Lightbox Modal */}
+      <Dialog open={selectedIndex !== null} onOpenChange={() => setSelectedIndex(null)}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-none">
+          <button
+            onClick={() => setSelectedIndex(null)}
+            className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+          
+          <button
+            onClick={handlePrev}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          >
+            <ChevronLeft className="w-8 h-8 text-white" />
+          </button>
+          
+          <button
+            onClick={handleNext}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          >
+            <ChevronRight className="w-8 h-8 text-white" />
+          </button>
+
+          {selectedIndex !== null && (
+            <div className="flex items-center justify-center w-full h-[90vh]">
+              <img
+                src={communityImages[selectedIndex].src}
+                alt={communityImages[selectedIndex].alt}
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+          )}
+          
+          {selectedIndex !== null && (
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/60 text-sm">
+              {selectedIndex + 1} / {communityImages.length}
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };
