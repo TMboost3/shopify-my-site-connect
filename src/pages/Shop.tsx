@@ -191,7 +191,7 @@ const Shop = () => {
           }
           
           const lowerTitle = product.node.title.toLowerCase();
-          const isCropTopOrHoodie = lowerTitle.includes('crop') || lowerTitle.includes('hoodie') || lowerTitle.includes('hoody');
+          const isCropTopOrHoodie = lowerTitle.includes('crop') || lowerTitle.includes('cropped') || lowerTitle.includes('hoodie') || lowerTitle.includes('hoody');
           
           if (isCropTopOrHoodie) {
             cropTopHoodies.push(product);
