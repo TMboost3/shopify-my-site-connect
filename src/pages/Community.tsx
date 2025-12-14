@@ -87,17 +87,17 @@ const Community = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-4 py-12 md:py-20">
+      <main className="container mx-auto px-3 md:px-4 py-8 md:py-20">
         {/* Hero Section */}
-        <section className="text-center mb-12 md:mb-16 animate-fade-in">
-          <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6 text-foreground">
+        <section className="text-center mb-8 md:mb-16 animate-fade-in">
+          <h1 className="font-heading text-2xl md:text-6xl font-bold mb-4 md:mb-6 text-foreground">
             JOIN THE FIEND COMMUNITY
           </h1>
           <div className="max-w-2xl mx-auto">
-            <p className="text-lg md:text-xl text-muted-foreground mb-4">
+            <p className="text-sm md:text-xl text-muted-foreground mb-3 md:mb-4">
               For a chance to be featured, post with
             </p>
-            <p className="font-heading text-2xl md:text-3xl font-bold text-accent">
+            <p className="font-heading text-xl md:text-3xl font-bold text-accent">
               #fiend4dopeness
             </p>
           </div>
@@ -105,7 +105,7 @@ const Community = () => {
 
         {/* Gallery Grid */}
         <section className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-2 md:gap-3">
             {communityImages.map((image, index) => (
               <div
                 key={index}
@@ -123,15 +123,15 @@ const Community = () => {
         </section>
 
         {/* Call to Action */}
-        <section className="text-center mt-16 animate-fade-in" style={{ animationDelay: "0.4s" }}>
-          <p className="text-muted-foreground mb-4">
+        <section className="text-center mt-10 md:mt-16 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+          <p className="text-xs md:text-base text-muted-foreground mb-3 md:mb-4">
             Share your FIEND style and become part of our community
           </p>
           <a
             href="https://www.instagram.com/explore/tags/fiend4dopeness/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block font-heading font-bold text-accent hover:text-accent/80 transition-colors"
+            className="inline-block font-heading font-bold text-sm md:text-base text-accent hover:text-accent/80 transition-colors"
           >
             View #fiend4dopeness on Instagram →
           </a>

@@ -66,21 +66,23 @@ export const Header = () => {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <nav className="md:hidden py-4 border-t border-border">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`block py-3 font-heading text-base font-bold tracking-wide transition-colors ${
-                  isActive(link.path)
-                    ? "text-accent"
-                    : "text-foreground hover:text-accent"
-                }`}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
+          <nav className="md:hidden py-6 border-t border-border animate-fade-in">
+            <div className="space-y-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`block py-4 px-2 font-heading text-lg font-bold tracking-wide transition-all duration-200 rounded-lg ${
+                    isActive(link.path)
+                      ? "text-accent bg-accent/10"
+                      : "text-foreground hover:text-accent hover:bg-muted"
+                  }`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
           </nav>
         )}
       </div>
