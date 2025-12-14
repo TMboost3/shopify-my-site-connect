@@ -69,6 +69,9 @@ export const PromoPopup = () => {
           </button>
           
           <div className="absolute bottom-0 left-0 right-0 p-4">
+            <h2 className="text-center text-white font-serif italic text-xl md:text-2xl mb-3 drop-shadow-lg" style={{ fontFamily: "'Georgia', serif" }}>
+              It's beginning to look a lot like <span className="text-pink-300 font-bold not-italic">DOPENESS</span>
+            </h2>
             <form onSubmit={handleSubmit} className="space-y-2">
               <Input
                 type="email"
