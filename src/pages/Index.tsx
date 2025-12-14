@@ -45,50 +45,19 @@ const Index = () => {
         // Filter out products that are out of stock or the Digital Girl Sweatsuit
         let inStockProducts = productsData.filter(product => product.node.variants.edges.some(v => v.node.availableForSale) && !product.node.title.includes("DIGITAL GIRL SWEATSUIT"));
 
-        // Select diverse products for homepage variety
-        const selectDiverseProducts = (products: ShopifyProduct[]): ShopifyProduct[] => {
-          const categoryKeywords = [
-            ['crewneck', 'crew'],
-            ['hoodie', 'hoody'],
-            ['hat', 'cap', 'beanie'],
-            ['jersey'],
-            ['polo'],
-            ['crop'],
-            ['tee', 't-shirt', 'tshirt'],
-            ['sweatsuit', 'outfit', 'set'],
-            ['sweatpants', 'jogger'],
-            ['tank', 'muscle'],
-            ['scrub']
-          ];
-
-          const selected: ShopifyProduct[] = [];
-          const usedIndices = new Set<number>();
-
-          // First, try to get one product from each category
-          for (const keywords of categoryKeywords) {
-            const productIndex = products.findIndex((p, idx) => 
-              !usedIndices.has(idx) && 
-              keywords.some(kw => p.node.title.toLowerCase().includes(kw))
-            );
-            if (productIndex !== -1 && selected.length < 6) {
-              selected.push(products[productIndex]);
-              usedIndices.add(productIndex);
-            }
+        // Shuffle array helper
+        const shuffleArray = <T,>(array: T[]): T[] => {
+          const shuffled = [...array];
+          for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
           }
-
-          // Fill remaining slots with other products not yet selected
-          for (let i = 0; i < products.length && selected.length < 6; i++) {
-            if (!usedIndices.has(i)) {
-              selected.push(products[i]);
-              usedIndices.add(i);
-            }
-          }
-
-          return selected;
+          return shuffled;
         };
 
-        const diverseProducts = selectDiverseProducts(inStockProducts);
-        setProducts(diverseProducts);
+        // Shuffle and take first 6 for randomized variety
+        const shuffledProducts = shuffleArray(inStockProducts).slice(0, 6);
+        setProducts(shuffledProducts);
       } catch (error) {
         console.error('Error loading products:', error);
       } finally {
