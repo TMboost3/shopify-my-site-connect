@@ -158,8 +158,9 @@ const Shop = () => {
         filtered.sort((a, b) => b.node.title.localeCompare(a.node.title));
         break;
       default:
-        // featured - pin specific products first, then keep original order
+        // featured - pin specific products first, then crop tops/hoodies, then rest
         const pinnedProducts: ShopifyProduct[] = [];
+        const cropTopHoodies: ShopifyProduct[] = [];
         const otherProducts: ShopifyProduct[] = [];
         
         pinnedProductTitles.forEach(title => {
@@ -171,10 +172,19 @@ const Shop = () => {
           const isPinned = pinnedProductTitles.some(
             title => product.node.title.toUpperCase() === title.toUpperCase()
           );
-          if (!isPinned) otherProducts.push(product);
+          if (isPinned) return;
+          
+          const lowerTitle = product.node.title.toLowerCase();
+          const isCropTopOrHoodie = lowerTitle.includes('crop') || lowerTitle.includes('hoodie') || lowerTitle.includes('hoody');
+          
+          if (isCropTopOrHoodie) {
+            cropTopHoodies.push(product);
+          } else {
+            otherProducts.push(product);
+          }
         });
         
-        filtered = [...pinnedProducts, ...otherProducts];
+        filtered = [...pinnedProducts, ...cropTopHoodies, ...otherProducts];
         break;
     }
 
