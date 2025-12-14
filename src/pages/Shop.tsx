@@ -56,7 +56,6 @@ const Shop = () => {
     'Crop Tops': ['crop'],
     'T-Shirts': ['tee', 't-shirt', 'tshirt', 'shirt'],
     'Sweatsuits': ['sweatsuit', 'outfit', 'set'],
-    'Sweatpants': ['sweatpants'],
     'Joggers': ['jogger', 'joggers'],
     'Tank Tops': ['tank', 'muscle'],
     'Medical Scrubs': ['scrub'],
