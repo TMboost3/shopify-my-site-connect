@@ -300,14 +300,14 @@ const Shop = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-8 md:py-16">
         {/* Page Header */}
-        <div className="text-center mb-16 animate-fade-up">
-          <h1 className="font-heading text-5xl md:text-6xl font-black tracking-tight mb-4">
+        <div className="text-center mb-10 md:mb-16 animate-fade-up">
+          <h1 className="font-heading text-3xl md:text-6xl font-black tracking-tight mb-3 md:mb-4">
             SHOP ALL
           </h1>
-          <div className="h-1 w-24 bg-accent mx-auto mb-6" />
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <div className="h-1 w-16 md:w-24 bg-accent mx-auto mb-4 md:mb-6" />
+          <p className="text-muted-foreground text-sm md:text-lg max-w-2xl mx-auto px-2">
             Explore our complete collection of streetwear essentials
           </p>
         </div>
@@ -429,7 +429,7 @@ const Shop = () => {
                   </Button>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8">
                   {filteredAndSortedProducts.map((product, index) => (
                     <div 
                       key={product.node.id}
@@ -447,12 +447,12 @@ const Shop = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-12 mt-24">
+      <footer className="bg-primary text-primary-foreground py-8 md:py-12 mt-12 md:mt-24">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <h3 className="font-heading text-xl font-bold mb-4">FIEND 4 DOPENESS</h3>
-              <p className="text-sm text-muted-foreground mb-3">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-8">
+            <div className="col-span-2 md:col-span-1">
+              <h3 className="font-heading text-lg md:text-xl font-bold mb-3 md:mb-4">FIEND 4 DOPENESS</h3>
+              <p className="text-xs md:text-sm text-muted-foreground mb-2 md:mb-3">
                 Elevated cultural streetwear.
               </p>
               <p className="text-xs text-muted-foreground">
@@ -479,22 +479,22 @@ const Shop = () => {
               </p>
             </div>
             <div>
-              <h4 className="font-heading font-bold mb-4">QUICK LINKS</h4>
-              <ul className="space-y-2 text-sm">
+              <h4 className="font-heading font-bold text-sm md:text-base mb-3 md:mb-4">QUICK LINKS</h4>
+              <ul className="space-y-2 text-xs md:text-sm">
                 <li><Link to="/shop" className="hover:text-accent transition-colors">Shop</Link></li>
                 <li><Link to="/about" className="hover:text-accent transition-colors">About & Music</Link></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-heading font-bold mb-4">SUPPORT</h4>
-              <ul className="space-y-2 text-sm">
+              <h4 className="font-heading font-bold text-sm md:text-base mb-3 md:mb-4">SUPPORT</h4>
+              <ul className="space-y-2 text-xs md:text-sm">
                 <li><a href="#" className="hover:text-accent transition-colors">Shipping</a></li>
                 <li><a href="#" className="hover:text-accent transition-colors">Returns</a></li>
                 <li><a href="#" className="hover:text-accent transition-colors">Contact</a></li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
+          <div className="border-t border-border pt-6 md:pt-8 text-center text-xs md:text-sm text-muted-foreground">
             <p>&copy; 2025 FIEND 4 DOPENESS. All rights reserved.</p>
           </div>
         </div>
