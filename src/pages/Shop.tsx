@@ -61,15 +61,16 @@ const Shop = () => {
     'Medical Scrubs': ['scrub'],
   };
 
-  // Get category for a product based on title
-  const getProductCategory = (title: string): string | null => {
+  // Get all categories for a product based on title (can match multiple)
+  const getProductCategories = (title: string): string[] => {
     const lowerTitle = title.toLowerCase();
+    const matchedCategories: string[] = [];
     for (const [category, keywords] of Object.entries(categoryKeywords)) {
       if (keywords.some(kw => lowerTitle.includes(kw))) {
-        return category;
+        matchedCategories.push(category);
       }
     }
-    return null;
+    return matchedCategories;
   };
 
   // Show all defined categories
@@ -115,11 +116,11 @@ const Shop = () => {
       return price >= priceRange[0] && price <= priceRange[1];
     });
 
-    // Category filter - match by title keywords
+    // Category filter - match by title keywords (products can match multiple categories)
     if (selectedCategories.length > 0) {
       filtered = filtered.filter(product => {
-        const productCategory = getProductCategory(product.node.title);
-        return productCategory && selectedCategories.includes(productCategory);
+        const productCategories = getProductCategories(product.node.title);
+        return productCategories.some(cat => selectedCategories.includes(cat));
       });
     }
 
