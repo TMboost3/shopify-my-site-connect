@@ -108,7 +108,7 @@ const About = () => {
             <div>
               <h3 className="font-heading text-xl font-bold mb-4">FIEND 4 DOPENESS</h3>
               <p className="text-sm text-gray-400 mb-3">
-                Elevated Cultural Streetwear.
+                Elevated cultural streetwear.
               </p>
               <p className="text-xs text-gray-500">
                 Artist and brand based in Los Angeles. Featured in{" "}
