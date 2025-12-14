@@ -27,74 +27,38 @@ const About = () => {
 
       {/* Brand Story */}
       <section className="py-20 md:py-32 px-4">
-        <div className="container mx-auto max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-            <div className="space-y-6 text-base md:text-lg leading-relaxed animate-fade-up">
-              <h2 className="font-heading text-3xl md:text-4xl font-black tracking-tight mb-8 text-accent">
-                OUR STORY
-              </h2>
-              <p>
-                Fiend 4 Dopeness is a streetwear brand built on resilience, reinvention, and a real pursuit of excellence.
-              </p>
+        <div className="container mx-auto max-w-4xl">
+          <div className="space-y-8 text-base md:text-lg leading-relaxed animate-fade-up">
+            <h2 className="font-heading text-3xl md:text-4xl font-black tracking-tight mb-8 text-accent">
+              OUR STORY
+            </h2>
+            
+            <p>
+              Fiend 4 Dopeness was created to redefine a word many of us grew up hearing. In the era it came from, "dope fiend" carried one meaning… This forward-thinking brand turns it into something powerful.
+            </p>
 
-              <p>
-                Born in Los Angeles, the creator/founder grew up in the long shadow of the 1980s drug epidemic that tore through Black communities. She saw up close how addiction, judgment, and labels could cling to the people she loved; how a whole story could get boiled down to two words: "dope fiend."
-              </p>
+            <p>
+              The foundation of Fiend 4 Dopeness is greatness. It began with the belief that where you start does not limit who you can become. That vision shaped the brand into a statement of elevation, confidence, and personal evolution.
+            </p>
 
-              <p>
-                She chose not to live under that label. She chose to flip it.
-              </p>
+            <p>
+              Fiend 4 Dopeness speaks to those who want more. It resonates with anyone who rose beyond expectation and grew into something extraordinary. It's for people who feel a pull toward something greater and commit to becoming the most elevated version of themselves, regardless of their beginning.
+            </p>
 
-              <p>
-                Fiend 4 Dopeness takes that phrase and turns it into something powerful. It's not about being addicted to destruction anymore, it's about being hooked on greatness. On better decisions. On better habits. On showing up as your best self in your craft, your community, and your everyday life.
-              </p>
-            </div>
+            <p className="font-heading text-xl md:text-2xl font-black">
+              It's not about the origin. It's about the outcome.
+            </p>
 
-            <div className="space-y-8 animate-fade-up delay-100">
-              <div className="bg-gradient-to-br from-accent via-accent/90 to-accent/80 p-10 md:p-12 rounded-2xl shadow-2xl border border-accent/20">
-                <p className="font-heading text-2xl md:text-3xl font-black mb-8 text-white">
-                  This brand is for:
-                </p>
+            <p className="font-heading text-xl md:text-2xl font-black text-accent">
+              Dopeness isn't an image. It's a standard.
+            </p>
 
-                <div className="space-y-5">
-                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-white/95">
-                    The ones who were counted out but kept going anyway.
-                  </p>
-
-                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-white/95">
-                    The underdogs who turned pain into purpose.
-                  </p>
-
-                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-white/95">
-                    The kids of the struggle who chose discipline, creativity, and self-belief.
-                  </p>
-
-                  <p className="text-lg md:text-xl font-semibold leading-relaxed text-white/95">
-                    And anyone who simply loves the chase of becoming better — in life, art, and style.
-
-
- Those that understand good enough is not nearly enough...                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-4 text-base md:text-lg">
-                <p className="leading-relaxed">
-                  Fiend 4 Dopeness is a reminder that where you come from doesn't get to decide where you're going. We don't run from our story, we build on it.
-                </p>
-
-                <p className="font-heading text-2xl md:text-3xl font-black text-accent">
-                  Not addicted to the problem.<br />Addicted to the progress.
-                </p>
-              </div>
-
-              <div className="pt-8">
-                <Button size="lg" className="relative bg-accent hover:bg-white hover:text-accent text-white font-heading font-bold px-14 py-7 text-xl hover:scale-105 transition-all duration-500 w-full md:w-auto" asChild>
-                  <Link to="/shop">
-                    SHOP THE COLLECTION
-                  </Link>
-                </Button>
-              </div>
+            <div className="pt-8">
+              <Button size="lg" className="relative bg-accent hover:bg-white hover:text-accent text-white font-heading font-bold px-14 py-7 text-xl hover:scale-105 transition-all duration-500" asChild>
+                <Link to="/shop">
+                  SHOP THE COLLECTION
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -136,52 +100,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-20 md:py-32 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16 animate-fade-up">
-            <h2 className="font-heading text-4xl md:text-5xl font-black tracking-tight mb-6">
-              WHAT WE STAND FOR
-            </h2>
-            <div className="h-1 w-24 bg-accent mx-auto" />
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="group relative bg-gradient-to-br from-muted/50 to-muted/30 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50">
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                  <span className="text-3xl font-black text-accent">01</span>
-                </div>
-                <h3 className="font-heading text-2xl md:text-3xl font-black">UNIQUENESS</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Exclusive designs that you won't find anywhere else, making you stand out from the crowd.
-                </p>
-              </div>
-            </div>
-            <div className="group relative bg-gradient-to-br from-muted/50 to-muted/30 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50">
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                  <span className="text-3xl font-black text-accent">02</span>
-                </div>
-                <h3 className="font-heading text-2xl md:text-3xl font-black">QUALITY</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Premium materials and impeccable detailing in every piece we create.
-                </p>
-              </div>
-            </div>
-            <div className="group relative bg-gradient-to-br from-muted/50 to-muted/30 p-8 rounded-2xl hover:shadow-xl transition-all duration-300 border border-border/50 hover:border-accent/50">
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-accent/20 transition-colors">
-                  <span className="text-3xl font-black text-accent">03</span>
-                </div>
-                <h3 className="font-heading text-2xl md:text-3xl font-black">EXCELLENCE</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Exceptional shopping experience from browsing to delivery, with dedicated customer service.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Footer */}
       <footer className="bg-black text-white py-12">
