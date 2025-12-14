@@ -193,7 +193,7 @@ const Index = () => {
             <div>
               <h3 className="font-heading text-xl font-bold mb-4">FIEND 4 DOPENESS</h3>
               <p className="text-sm text-muted-foreground mb-3">
-                Authentically unique streetwear for the culture.
+                Elevated Cultural Streetwear
               </p>
               <p className="text-xs text-muted-foreground">
                 Artist and brand based in Los Angeles. Featured in{" "}
