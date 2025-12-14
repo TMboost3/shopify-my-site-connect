@@ -7,7 +7,7 @@ const About = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative h-[50vh] md:h-[70vh] overflow-hidden">
+      <section className="relative h-[35vh] md:h-[70vh] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-background z-10" />
         <img src={aboutHero} alt="Fiend 4 Dopeness Brand" className="w-full h-full object-cover" />
         <div className="absolute inset-0 z-20 flex items-end justify-center pb-6 md:pb-20">
