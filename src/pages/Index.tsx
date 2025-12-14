@@ -161,32 +161,14 @@ const Index = () => {
             <div className="order-2 md:order-1 space-y-8 animate-fade-in">
               <div>
                 <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight">
-                  FLIPPING THE<br />NARRATIVE
+                  FIEND 4 DOPENESS
                 </h2>
                 <div className="h-1 w-24 bg-accent mb-8" />
               </div>
               
-              <div className="space-y-6 text-lg md:text-xl leading-relaxed">
-                <p className="text-muted-foreground">
-                  A <span className="text-foreground font-bold">Black-owned lifestyle brand</span> born in South Los Angeles, 
-                  built on resilience and reinvention.
-                </p>
-                <p className="text-muted-foreground">
-                  In a world that weaponizes words, we chose to transform one.
-                </p>
-                <p className="text-muted-foreground">
-                  <span className="text-accent font-bold">"Dope fiend"</span> — a phrase that never belonged to us, 
-                  but one we completely redefined.
-                </p>
-                <p className="text-muted-foreground">
-                  We flipped its meaning from destruction to excellence. From addiction to problems, 
-                  to being <span className="text-foreground font-bold">hooked on greatness</span>.
-                </p>
-                <p className="text-2xl md:text-3xl font-black text-foreground">
-                  Not addicted to the problem.<br />
-                  Addicted to the progress.
-                </p>
-              </div>
+              <p className="text-lg md:text-xl leading-relaxed text-muted-foreground">
+                Fiend 4 Dopeness began with one intention: to give new direction to a word that never told the whole truth. Born in Los Angeles during the height of the 1980s crack epidemic, the creator brings a perspective shaped by a word rooted in destruction, and transforms it into purpose. What was once spoken as a limitation now reflects a standard of greatness that is unmistakable and undeniable.
+              </p>
               
               <Link to="/about">
                 <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-heading font-bold text-base px-8 py-6 mt-4 hover:scale-105 transition-transform">
