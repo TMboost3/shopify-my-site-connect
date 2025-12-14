@@ -126,12 +126,9 @@ const Community = () => {
             {communityImages.map((image, index) => (
               <div
                 key={index}
-                className="aspect-square overflow-hidden rounded-lg bg-muted group cursor-pointer relative"
+                className="aspect-square overflow-hidden rounded-lg bg-muted group cursor-pointer"
                 onClick={() => setSelectedIndex(index)}
               >
-                <div className="absolute top-1 left-1 z-10 bg-black/80 text-white text-xs font-bold px-2 py-1 rounded">
-                  {index + 1}
-                </div>
                 <img
                   src={image.src}
                   alt={image.alt}
