@@ -154,7 +154,7 @@ const STOREFRONT_QUERY = `
   }
 `;
 
-export async function fetchProducts(count: number = 50): Promise<ShopifyProduct[]> {
+export async function fetchProducts(count: number = 100): Promise<ShopifyProduct[]> {
   const data = await storefrontApiRequest(STOREFRONT_QUERY, { first: count });
   const products = data?.data?.products?.edges || [];
   
