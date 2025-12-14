@@ -88,6 +88,18 @@ const Shop = () => {
     return Array.from(brands).sort();
   }, [products]);
 
+  // Pinned products that should appear first (in order)
+  const pinnedProductTitles = [
+    "FIEND 4 DOPENESS ABSTRACT BLOCK CREWNECK",
+    "FIEND 4 DOPENESS TRIPLE GREATNESS MEDICAL SCRUBS",
+    "FIEND 4 DOPENESS TRIPLE GREATNESS HOODIE",
+    "FIEND 4 DOPENESS GENERATIONAL HEALTH SHIRT",
+    "FIEND 4 DOPENESS - FRONT RUNNER SWEATSUIT '21",
+    "FIEND 4 DOPENESS STRIPED ANGLE HOODIE",
+    "FIEND 4 DOPENESS - BIG FACES DENIM SKORT",
+    "FIEND 4 DOPENESS- EXTRA, EXTRA 'CRACK BABY' SHIRT",
+  ];
+
   // Filter and sort products
   const filteredAndSortedProducts = useMemo(() => {
     let filtered = [...products];
@@ -146,7 +158,23 @@ const Shop = () => {
         filtered.sort((a, b) => b.node.title.localeCompare(a.node.title));
         break;
       default:
-        // featured - keep original order
+        // featured - pin specific products first, then keep original order
+        const pinnedProducts: ShopifyProduct[] = [];
+        const otherProducts: ShopifyProduct[] = [];
+        
+        pinnedProductTitles.forEach(title => {
+          const found = filtered.find(p => p.node.title.toUpperCase() === title.toUpperCase());
+          if (found) pinnedProducts.push(found);
+        });
+        
+        filtered.forEach(product => {
+          const isPinned = pinnedProductTitles.some(
+            title => product.node.title.toUpperCase() === title.toUpperCase()
+          );
+          if (!isPinned) otherProducts.push(product);
+        });
+        
+        filtered = [...pinnedProducts, ...otherProducts];
         break;
     }
 
