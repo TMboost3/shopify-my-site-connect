@@ -73,21 +73,10 @@ const Shop = () => {
     return null;
   };
 
-  // Extract unique categories from products
+  // Show all defined categories
   const availableCategories = useMemo(() => {
-    const categories = new Set<string>();
-    products.forEach(product => {
-      const category = getProductCategory(product.node.title);
-      if (category) {
-        categories.add(category);
-      }
-    });
-    // Sort by the defined order
-    const categoryOrder = Object.keys(categoryKeywords);
-    return Array.from(categories).sort((a, b) => 
-      categoryOrder.indexOf(a) - categoryOrder.indexOf(b)
-    );
-  }, [products]);
+    return Object.keys(categoryKeywords);
+  }, []);
 
   // Extract unique brands
   const availableBrands = useMemo(() => {
