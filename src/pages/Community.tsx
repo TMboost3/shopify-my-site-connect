@@ -146,12 +146,12 @@ const Community = () => {
             Share your FIEND style and become part of our community
           </p>
           <a
-            href="https://www.instagram.com/explore/tags/fiend4dopeness/"
+            href="https://www.instagram.com/fiend4dopeness/?hl=en"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block font-heading font-bold text-sm md:text-base text-accent hover:text-accent/80 transition-colors"
           >
-            View #fiend4dopeness on Instagram →
+            Follow @fiend4dopeness on Instagram →
           </a>
         </section>
       </main>
