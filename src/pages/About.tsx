@@ -136,7 +136,7 @@ const About = () => {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-6 md:pt-8 text-center text-xs md:text-sm text-gray-400">
-            <p>&copy; 2025 FIEND 4 DOPENESS. All rights reserved.</p>
+            <p>&copy; 2025 Z's C.R.O.W.N. LLC. All rights reserved.</p>
           </div>
         </div>
       </footer>
