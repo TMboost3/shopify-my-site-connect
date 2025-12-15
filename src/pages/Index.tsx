@@ -230,6 +230,54 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Collections Section */}
+      <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-muted/30 to-background">
+        <div className="container mx-auto">
+          <div className="text-center mb-10 md:mb-16 animate-fade-up">
+            <div className="inline-block">
+              <h2 className="font-heading text-3xl md:text-6xl font-black tracking-tight mb-3 md:mb-4">
+                COLLECTIONS
+              </h2>
+              <div className="h-1 w-24 md:w-32 bg-accent mx-auto" />
+            </div>
+            <p className="mt-4 md:mt-6 text-muted-foreground text-base md:text-lg">Shop by category</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
+            {[
+              { name: "Crewnecks", slug: "crewneck" },
+              { name: "Hats", slug: "hat" },
+              { name: "Hoodies", slug: "hoodie" },
+              { name: "Jerseys", slug: "jersey" },
+              { name: "Polo Shirts", slug: "polo" },
+              { name: "Crop Tops", slug: "crop" },
+              { name: "T-Shirts", slug: "t-shirt" },
+              { name: "Sweatsuits", slug: "sweatsuit" },
+              { name: "Sweatpants", slug: "sweatpant" },
+              { name: "Tank Tops", slug: "tank" },
+              { name: "Medical Scrubs", slug: "scrub" },
+              { name: "Outfits", slug: "outfit" },
+            ].map((collection) => (
+              <Link
+                key={collection.slug}
+                to={`/shop?category=${collection.slug}`}
+                className="group relative bg-muted/50 hover:bg-accent/10 border border-border hover:border-accent/50 rounded-lg p-6 md:p-8 text-center transition-all duration-300 hover:scale-105"
+              >
+                <h3 className="font-heading font-bold text-sm md:text-lg tracking-wide group-hover:text-accent transition-colors">
+                  {collection.name}
+                </h3>
+              </Link>
+            ))}
+          </div>
+          
+          <div className="text-center mt-10 md:mt-12">
+            <Button size="lg" variant="outline" className="font-heading font-bold text-sm md:text-base px-8 py-5 hover:scale-105 transition-transform" asChild>
+              <Link to="/shop">View All Products</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground py-8 md:py-12">
         <div className="container mx-auto px-4">
