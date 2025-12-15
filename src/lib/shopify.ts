@@ -29,6 +29,7 @@ export interface ShopifyProduct {
     handle: string;
     productType: string;
     vendor: string;
+    createdAt?: string;
     priceRange: {
       minVariantPrice: {
         amount: string;
@@ -113,6 +114,7 @@ const STOREFRONT_QUERY = `
           handle
           productType
           vendor
+          createdAt
           priceRange {
             minVariantPrice {
               amount
@@ -166,6 +168,24 @@ export async function fetchProducts(count: number = 100): Promise<ShopifyProduct
       vendor: getBrandFromTitle(product.node.title)
     }
   }));
+}
+
+// Fetch products sorted by newest first
+export async function fetchNewArrivals(count: number = 6): Promise<ShopifyProduct[]> {
+  const products = await fetchProducts(100);
+  
+  // Sort by createdAt date (newest first) and filter for in-stock items
+  const inStockProducts = products.filter(product => 
+    product.node.variants.edges.some(v => v.node.availableForSale)
+  );
+  
+  const sortedProducts = inStockProducts.sort((a, b) => {
+    const dateA = a.node.createdAt ? new Date(a.node.createdAt).getTime() : 0;
+    const dateB = b.node.createdAt ? new Date(b.node.createdAt).getTime() : 0;
+    return dateB - dateA;
+  });
+  
+  return sortedProducts.slice(0, count);
 }
 
 // GraphQL query to fetch single product by handle
