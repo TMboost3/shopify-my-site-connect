@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchProducts, ShopifyProduct } from "@/lib/shopify";
+import { fetchProducts, fetchNewArrivals, ShopifyProduct } from "@/lib/shopify";
 import { ProductCard } from "@/components/ProductCard";
 import { Header } from "@/components/Header";
 import { PromoPopup } from "@/components/PromoPopup";
@@ -30,7 +30,9 @@ import community20 from "@/assets/community-20.png";
 const communityImages = [community1, community2, community3, community4, community5, community6, community7, community8, community9, community10, community11, community12, community13, community14, community15, community16, community17, community18, community19, community20];
 const Index = () => {
   const [products, setProducts] = useState<ShopifyProduct[]>([]);
+  const [newArrivals, setNewArrivals] = useState<ShopifyProduct[]>([]);
   const [loading, setLoading] = useState(true);
+  const [newArrivalsLoading, setNewArrivalsLoading] = useState(true);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -64,7 +66,20 @@ const Index = () => {
         setLoading(false);
       }
     };
+    
+    const loadNewArrivals = async () => {
+      try {
+        const arrivals = await fetchNewArrivals(4);
+        setNewArrivals(arrivals);
+      } catch (error) {
+        console.error('Error loading new arrivals:', error);
+      } finally {
+        setNewArrivalsLoading(false);
+      }
+    };
+    
     loadProducts();
+    loadNewArrivals();
   }, []);
   return <div className="min-h-screen bg-background font-body">
       <Header />
@@ -133,8 +148,31 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Featured Products Section */}
+      {/* New Arrivals Section */}
       <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-background to-muted/30">
+        <div className="container mx-auto">
+          <div className="text-center mb-10 md:mb-16 animate-fade-up">
+            <div className="inline-block">
+              <h2 className="font-heading text-3xl md:text-6xl font-black tracking-tight mb-3 md:mb-4">
+                NEW ARRIVALS
+              </h2>
+              <div className="h-1 w-24 md:w-32 bg-accent mx-auto" />
+            </div>
+            <p className="mt-4 md:mt-6 text-muted-foreground text-base md:text-lg">Fresh drops just landed</p>
+          </div>
+
+          {newArrivalsLoading ? <div className="flex justify-center items-center py-20">
+              <Loader2 className="h-8 w-8 animate-spin text-primary" />
+            </div> : newArrivals.length === 0 ? <div className="text-center py-20">
+              <p className="text-muted-foreground text-lg">No new arrivals yet</p>
+            </div> : <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
+              {newArrivals.map(product => <ProductCard key={product.node.id} product={product} />)}
+            </div>}
+        </div>
+      </section>
+
+      {/* Featured Products Section */}
+      <section className="py-16 md:py-24 px-4 bg-muted/20">
         <div className="container mx-auto">
           <div className="text-center mb-10 md:mb-16 animate-fade-up">
             <div className="inline-block">
