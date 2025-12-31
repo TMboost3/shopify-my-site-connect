@@ -336,7 +336,9 @@ export async function createStorefrontCheckout(items: CartItem[]): Promise<strin
       throw new Error('No checkout URL returned from Shopify');
     }
 
+    // Replace custom domain with myshopify.com domain for checkout
     const url = new URL(cart.checkoutUrl);
+    url.hostname = SHOPIFY_STORE_PERMANENT_DOMAIN;
     url.searchParams.set('channel', 'online_store');
     const checkoutUrl = url.toString();
     return checkoutUrl;
