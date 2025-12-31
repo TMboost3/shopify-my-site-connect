@@ -77,10 +77,13 @@ export const useCartStore = create<CartStore>()(
 
         setLoading(true);
         try {
+          console.log('Creating checkout with items:', items.length);
           const checkoutUrl = await createStorefrontCheckout(items);
+          console.log('Checkout URL received:', checkoutUrl);
           setCheckoutUrl(checkoutUrl);
         } catch (error) {
           console.error('Failed to create checkout:', error);
+          throw error; // Re-throw so CartDrawer can handle it
         } finally {
           setLoading(false);
         }

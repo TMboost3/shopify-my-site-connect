@@ -30,14 +30,22 @@ export const CartDrawer = () => {
     try {
       await createCheckout();
       const checkoutUrl = useCartStore.getState().checkoutUrl;
-      if (checkoutUrl) {
-        window.open(checkoutUrl, '_blank');
-        setIsOpen(false);
+      
+      if (!checkoutUrl) {
+        toast.error("Checkout unavailable", {
+          description: "Could not create checkout. Please try again or contact support."
+        });
+        return;
       }
+      
+      console.log('Opening checkout URL:', checkoutUrl);
+      window.open(checkoutUrl, '_blank');
+      setIsOpen(false);
     } catch (error) {
       console.error('Checkout failed:', error);
+      const errorMessage = error instanceof Error ? error.message : "Unknown error";
       toast.error("Checkout failed", {
-        description: "There was an error creating your checkout. Please try again."
+        description: `There was an error: ${errorMessage}. Please try again.`
       });
     }
   };
