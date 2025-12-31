@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CartDrawer } from "@/components/CartDrawer";
 import logo from "@/assets/logo.png";
 
 export const Header = () => {
@@ -11,7 +10,6 @@ export const Header = () => {
 
   const navLinks = [
     { name: "HOME", path: "/" },
-    { name: "SHOP", path: "/shop" },
     { name: "COMMUNITY", path: "/community" },
     { name: "ABOUT & MUSIC", path: "/about" },
   ];
@@ -44,11 +42,8 @@ export const Header = () => {
             ))}
           </nav>
 
-          {/* Cart & Mobile Menu Toggle */}
+          {/* Mobile Menu Toggle */}
           <div className="flex items-center gap-2">
-            <CartDrawer />
-            
-            {/* Mobile Menu Button */}
             <Button
               variant="ghost"
               size="icon"
