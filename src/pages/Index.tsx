@@ -90,11 +90,11 @@ const Index = () => {
         {/* Community images slideshow */}
         <div className="absolute inset-0 z-0">
           {communityImages.map((img, idx) => <div key={idx} className="absolute inset-0 transition-opacity duration-1000" style={{
-          opacity: idx === currentImageIndex ? 0.4 : 0
+          opacity: idx === currentImageIndex ? 0.7 : 0
         }}>
               <img src={img} alt="Community" className="w-full h-full object-cover" />
             </div>)}
-          <div className="absolute inset-0 bg-background/50" />
+          <div className="absolute inset-0 bg-background/30" />
         </div>
 
         {/* Animated gradient background */}
@@ -109,7 +109,10 @@ const Index = () => {
 
         <div className="relative z-20 text-center px-4 max-w-5xl mx-auto -mt-10 md:-mt-20">
           <div className="animate-fade-in">
-            <img src={heroLogo} alt="FIEND 4 DOPENESS" className="w-full max-w-lg md:max-w-2xl mx-auto mb-4 animate-scale-in" />
+            {/* Logo in white card container */}
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-10 shadow-2xl mx-auto max-w-md md:max-w-xl mb-6 md:mb-8 animate-scale-in">
+              <img src={heroLogo} alt="FIEND 4 DOPENESS" className="w-full" />
+            </div>
             <p className="text-lg md:text-2xl font-heading font-bold tracking-widest text-accent animate-fade-in mb-4 md:mb-6" style={{
             animationDelay: '0.3s',
             animationFillMode: 'backwards'
