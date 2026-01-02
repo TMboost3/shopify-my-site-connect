@@ -4,6 +4,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import community1 from "@/assets/community-1.png";
 import community2 from "@/assets/community-2.png";
+import community3 from "@/assets/community-3.png";
 import community4 from "@/assets/community-4.png";
 import community5 from "@/assets/community-5.png";
 import community6 from "@/assets/community-6.png";
@@ -104,20 +105,76 @@ const Community = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="container mx-auto px-3 md:px-4 py-8 md:py-20">
-        {/* Hero Section */}
-        <section className="text-center mb-8 md:mb-16 animate-fade-in">
-          <h1 className="font-heading text-2xl md:text-6xl font-bold mb-4 md:mb-6 text-foreground">
-            JOIN THE FIEND COMMUNITY
+      {/* Hero Section with Background */}
+      <section className="relative h-[50vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <img 
+            src={community3} 
+            alt="Community" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+        </div>
+        
+        {/* Hero Content */}
+        <div className="relative z-10 text-center px-4">
+          <h1 className="font-heading text-4xl md:text-7xl lg:text-8xl font-black text-white mb-4 tracking-tight">
+            THE COMMUNITY
           </h1>
-          <div className="max-w-2xl mx-auto">
-            <p className="text-sm md:text-xl text-muted-foreground mb-3 md:mb-4">
-              For a chance to be featured, post with
-            </p>
-            <p className="font-heading text-xl md:text-3xl font-bold text-accent">
-              #fiend4dopeness
-            </p>
+          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+            Join the movement. Connect with fellow fiends who are addicted to greatness.
+          </p>
+        </div>
+      </section>
+
+      {/* More Than A Brand Section */}
+      <section className="py-16 md:py-24 bg-muted">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+            {/* Text Content */}
+            <div className="space-y-6">
+              <div>
+                <h2 className="font-heading text-3xl md:text-5xl font-black tracking-tight mb-4">
+                  MORE THAN A BRAND
+                </h2>
+                <div className="h-1 w-24 bg-accent" />
+              </div>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                We're a family of dreamers, creators, and go-getters who believe in the power of community. 
+                Every piece you wear connects you to a movement that celebrates authenticity, hustle, and 
+                the relentless pursuit of dopeness. This isn't just fashion—it's a lifestyle, a mindset, 
+                and a statement that you're part of something bigger.
+              </p>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+                Tag us in your fits using <span className="text-accent font-bold">#fiend4dopeness</span> for 
+                a chance to be featured in our community gallery.
+              </p>
+            </div>
+            
+            {/* Image */}
+            <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden">
+              <img 
+                src={community3} 
+                alt="FIEND Community" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 border-4 border-accent/20" />
+            </div>
           </div>
+        </div>
+      </section>
+      
+      <main className="container mx-auto px-3 md:px-4 py-8 md:py-20">
+        {/* Gallery Header */}
+        <section className="text-center mb-8 md:mb-16 animate-fade-in">
+          <h2 className="font-heading text-2xl md:text-5xl font-bold mb-4 md:mb-6 text-foreground">
+            COMMUNITY GALLERY
+          </h2>
+          <div className="h-1 w-24 bg-accent mx-auto mb-4" />
+          <p className="text-sm md:text-lg text-muted-foreground">
+            Real fiends rocking real dopeness
+          </p>
         </section>
 
         {/* Gallery Grid */}
