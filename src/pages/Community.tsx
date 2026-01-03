@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, Download } from "lucide-react";
 import community1 from "@/assets/community-1.png";
 import community2 from "@/assets/community-2.png";
 import community3 from "@/assets/community-3.png";
@@ -99,6 +99,21 @@ const Community = () => {
     if (selectedIndex !== null) {
       setSelectedIndex(selectedIndex === communityImages.length - 1 ? 0 : selectedIndex + 1);
     }
+  };
+
+  const handleDownload = async () => {
+    if (selectedIndex === null) return;
+    const image = communityImages[selectedIndex];
+    const response = await fetch(image.src);
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `fiend-community-${selectedIndex + 1}.png`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -216,12 +231,21 @@ const Community = () => {
       {/* Lightbox Modal */}
       <Dialog open={selectedIndex !== null} onOpenChange={() => setSelectedIndex(null)}>
         <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-none">
-          <button
-            onClick={() => setSelectedIndex(null)}
-            className="absolute top-4 right-4 z-50 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-          >
-            <X className="w-6 h-6 text-white" />
-          </button>
+          <div className="absolute top-4 right-4 z-50 flex gap-2">
+            <button
+              onClick={handleDownload}
+              className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+              title="Download image"
+            >
+              <Download className="w-6 h-6 text-white" />
+            </button>
+            <button
+              onClick={() => setSelectedIndex(null)}
+              className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+            >
+              <X className="w-6 h-6 text-white" />
+            </button>
+          </div>
           
           <button
             onClick={handlePrev}
